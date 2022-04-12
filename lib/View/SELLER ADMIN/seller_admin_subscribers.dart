@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_transactions.dart';
+import 'package:tipster/View/SELLER%20ADMIN/seller_admin_fees.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminSubscribers extends StatefulWidget {
@@ -53,7 +54,12 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SellerAdminFeesEarnings()));
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: appThemeBlue,
