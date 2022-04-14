@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/forgot_password_flow/forgot_password.dart';
+import 'package:tipster/View/home_screen_logged_id.dart';
 import 'package:tipster/View/landing_screen.dart';
+import 'package:tipster/View/signup_screen.dart';
 import 'package:tipster/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,7 +16,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -36,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         topLeft: Radius.circular(10))),
                 child: Center(
                   child: Text(
-                    'SIGN IN',
+                    'LOG IN',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -135,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LandingScreen()));
+                                builder: (context) => HomeScreenLogIn()));
                       },
                       child: Text('LOG IN'),
                       style: ButtonStyle(
@@ -144,7 +149,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Text('Don\'t have an account?'),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpScreen()));
+                        },
                         child: Text(
                           'Sign Up',
                           style: TextStyle(

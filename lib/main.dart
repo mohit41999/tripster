@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tipster/View/home_screen.dart';
 import 'package:tipster/View/signup_screen.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      home: const HomeScreen(),
     );
   }
 }
