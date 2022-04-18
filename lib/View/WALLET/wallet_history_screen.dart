@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
+import 'package:tipster/constants/methods.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletHistoryScreen extends StatefulWidget {
@@ -13,7 +15,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -57,10 +59,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WalletDepositScreen()));
+                    walletDialog(context);
                   },
                   child: Container(
                     width: 150,

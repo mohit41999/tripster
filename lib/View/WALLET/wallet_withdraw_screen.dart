@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/change_personal_details_screen.dart';
+import 'package:tipster/constants/methods.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletWithdrawScreen extends StatefulWidget {
@@ -13,7 +15,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -55,31 +57,36 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 180,
-                  decoration: BoxDecoration(
-                    color: appThemeBlue,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        Text(
-                          'WITHDRAW',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
+                GestureDetector(
+                  onTap: () {
+                    walletDialog(context);
+                  },
+                  child: Container(
+                    width: 180,
+                    decoration: BoxDecoration(
+                      color: appThemeBlue,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 25,
+                          ),
+                          Text(
+                            'WITHDRAW',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -15,13 +15,68 @@ class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TextStyle subscriptionStyle =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  final listOfMoreMenu = [
+    "Tips",
+    "Tipsters",
+  ];
+  void _showPopupMenu(BuildContext context) async {
+    List<PopupMenuEntry<dynamic>> list = [];
+    for (var element in listOfMoreMenu) {
+      list.add(PopupMenuItem(
+          value: element,
+          enabled: true,
+          child: Column(
+            children: [
+              Container(
+                color: appThemeBlue,
+                width: MediaQuery.of(context).size.width,
+                child: GestureDetector(
+                    onTap: () {
+                      _selectMoreOption(
+                          listOfMoreMenu.indexOf(element), context);
+                    },
+                    child: Text(
+                      element.toString(),
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ),
+              Divider(
+                color: Colors.white,
+              ),
+            ],
+          )));
+      // list.add(PopupMenuDivider());
+    }
+    var sizeOfScreen = MediaQuery.of(context).size;
+    await showMenu(
+        context: context,
+        color: appThemeBlue,
+        position: RelativeRect.fromLTRB(
+            0, 80, MediaQuery.of(context).size.width / 2, 0),
+        items: list,
+        useRootNavigator: true);
+  }
+
+  void _selectMoreOption(int index, BuildContext context) {
+    switch (index) {
+      case 0:
+        break;
+      case 1:
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        leading: Icon(Icons.menu),
+        leading: GestureDetector(
+          child: Icon(Icons.menu),
+          onTap: () {
+            _showPopupMenu(context);
+          },
+        ),
         actions: [
           GestureDetector(
             onTap: () {
@@ -144,52 +199,53 @@ class _HomeScreenState extends State<HomeScreen>
                       style: TextStyle(color: Colors.white),
                     ),
                     Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey,
-                            ),
-                            color: Colors.white),
-                        width: double.infinity,
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton<String>(
-                            isExpanded: true,
-
-                            value: null,
-                            hint: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(''),
-                            ),
-
-                            // value: dropdownValue,
-                            icon: Padding(
-                              padding: const EdgeInsets.only(right: 18.0),
-                              child: const Icon(
-                                  Icons.keyboard_arrow_down_outlined),
-                            ),
-
-                            // iconSize: 24,
-
-                            //underline: Container(),
-                            onChanged: (String? newValue) {},
-                            items: [
-                              DropdownMenuItem<String>(
-                                value: '1',
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 18.0),
-                                  child: Text('1'),
-                                ),
-                              ),
-                              DropdownMenuItem<String>(
-                                value: '2',
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 18.0),
-                                  child: Text('2'),
-                                ),
-                              )
-                            ],
+                      height: 40,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
                           ),
-                        )),
+                          color: Colors.white),
+                      width: double.infinity,
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+
+                          value: null,
+                          hint: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(''),
+                          ),
+
+                          // value: dropdownValue,
+                          icon: Padding(
+                            padding: const EdgeInsets.only(right: 18.0),
+                            child:
+                                const Icon(Icons.keyboard_arrow_down_outlined),
+                          ),
+                          //
+                          // iconSize: 24,
+                          //
+                          // underline: Container(),
+                          onChanged: (String? newValue) {},
+                          items: [
+                            DropdownMenuItem<String>(
+                              value: '1',
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 18.0),
+                                child: Text('1'),
+                              ),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: '2',
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 18.0),
+                                child: Text('2'),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tipster/View/WALLET/wallet_history_screen.dart';
 import 'package:tipster/View/WALLET/wallet_withdraw_screen.dart';
+import 'package:tipster/constants/methods.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletDepositScreen extends StatefulWidget {
@@ -13,7 +16,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -55,31 +58,36 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: appThemeBlue,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        Text(
-                          'DEPOSIT',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
+                GestureDetector(
+                  onTap: () {
+                    walletDialog(context);
+                  },
+                  child: Container(
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: appThemeBlue,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 25,
+                          ),
+                          Text(
+                            'DEPOSIT',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -115,11 +123,15 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                   height: 10,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Payment method:',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: Text(
+                        'Payment method:',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
                     ),
                     SizedBox(
                       width: 20,

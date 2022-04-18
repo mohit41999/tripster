@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tipster/View/home_screen.dart';
+import 'package:tipster/View/my_coupon_screen.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/commonBtn.dart';
 import 'package:tipster/utils/colors.dart';
 
 class NewPickScreen extends StatefulWidget {
@@ -9,9 +13,11 @@ class NewPickScreen extends StatefulWidget {
 }
 
 class _NewPickScreenState extends State<NewPickScreen> {
+  TextStyle commonstyle = TextStyle(fontSize: 18);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -40,159 +46,220 @@ class _NewPickScreenState extends State<NewPickScreen> {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Sport'),
-                  Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Sport',
+                      style: commonstyle,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      width: double.infinity,
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton<String>(
-                          isExpanded: true,
+                        width: double.infinity,
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            isExpanded: true,
 
-                          value: null,
-                          hint: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Soccer'),
-                          ),
-
-                          // value: dropdownValue,
-                          icon: Padding(
-                            padding: const EdgeInsets.only(right: 18.0),
-                            child:
-                                const Icon(Icons.keyboard_arrow_down_outlined),
-                          ),
-
-                          // iconSize: 24,
-
-                          //underline: Container(),
-                          onChanged: (String? newValue) {},
-                          items: [
-                            DropdownMenuItem<String>(
-                              value: '1',
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
-                                child: Text('1'),
-                              ),
+                            value: null,
+                            hint: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Soccer', style: commonstyle),
                             ),
-                            DropdownMenuItem<String>(
-                              value: '2',
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
-                                child: Text('2'),
+
+                            // value: dropdownValue,
+                            icon: Padding(
+                              padding: const EdgeInsets.only(right: 18.0),
+                              child: const Icon(
+                                  Icons.keyboard_arrow_down_outlined),
+                            ),
+
+                            // iconSize: 24,
+
+                            //underline: Container(),
+                            onChanged: (String? newValue) {},
+                            items: [
+                              DropdownMenuItem<String>(
+                                value: '1',
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 18.0),
+                                  child: Text('1'),
+                                ),
                               ),
-                            )
+                              DropdownMenuItem<String>(
+                                value: '2',
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 18.0),
+                                  child: Text('2'),
+                                ),
+                              )
+                            ],
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Competition', style: commonstyle),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('UEFA Champions League', style: commonstyle),
+                            Icon(Icons.search)
                           ],
                         ),
-                      )),
-                  Text('Competition'),
-                  Container(
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('UEFA Champions League'),
-                          Icon(Icons.search)
-                        ],
                       ),
                     ),
                   ),
-                  Text('Event'),
-                  Container(
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text('Pick event'), Icon(Icons.search)],
-                      ),
-                    ),
+                  SizedBox(
+                    height: 10,
                   ),
-                  Text('Market'),
-                  Container(
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Total corners FT'),
-                          Icon(Icons.search)
-                        ],
-                      ),
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Event', style: commonstyle),
                   ),
-                  Text('Bet'),
-                  Container(
-                      height: 40,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      width: double.maxFinite,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(4),
                       ),
-                      width: double.infinity,
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton<String>(
-                          isExpanded: true,
-
-                          value: null,
-                          hint: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Pick bet'),
-                          ),
-
-                          // value: dropdownValue,
-                          icon: Padding(
-                            padding: const EdgeInsets.only(right: 18.0),
-                            child:
-                                const Icon(Icons.keyboard_arrow_down_outlined),
-                          ),
-
-                          // iconSize: 24,
-
-                          //underline: Container(),
-                          onChanged: (String? newValue) {},
-                          items: [
-                            DropdownMenuItem<String>(
-                              value: '1',
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
-                                child: Text('1'),
-                              ),
-                            ),
-                            DropdownMenuItem<String>(
-                              value: '2',
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
-                                child: Text('2'),
-                              ),
-                            )
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Pick event', style: commonstyle),
+                            Icon(Icons.search)
                           ],
                         ),
-                      )),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Market', style: commonstyle),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Total corners FT', style: commonstyle),
+                            Icon(Icons.search)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Bet', style: commonstyle),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        width: double.infinity,
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            isExpanded: true,
+
+                            value: null,
+                            hint: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Pick bet', style: commonstyle),
+                            ),
+
+                            // value: dropdownValue,
+                            icon: Padding(
+                              padding: const EdgeInsets.only(right: 18.0),
+                              child: const Icon(
+                                  Icons.keyboard_arrow_down_outlined),
+                            ),
+
+                            // iconSize: 24,
+
+                            //underline: Container(),
+                            onChanged: (String? newValue) {},
+                            items: [
+                              DropdownMenuItem<String>(
+                                value: '1',
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 18.0),
+                                  child: Text('1'),
+                                ),
+                              ),
+                              DropdownMenuItem<String>(
+                                value: '2',
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 18.0),
+                                  child: Text('2'),
+                                ),
+                              )
+                            ],
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Center(
+                    child: commonBtn(
+                        context,
+                        MyCouponScreen(),
+                        appThemelightPink,
+                        Colors.white,
+                        'ADD TO COUPON',
+                        18,
+                        5),
+                  )
                 ],
               ))
         ],

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tipster/View/login_screen.dart';
+import 'package:tipster/View/publish_new_pick.dart';
 import 'package:tipster/View/signup_screen.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class HomeScreenLogIn extends StatefulWidget {
@@ -22,6 +24,132 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
     Tab(text: 'MY TIPSTERS'),
   ];
   late TabController tabController;
+  final listOfMoreMenu = [
+    "BLOG",
+    "NEWPICK+",
+    "TIPS",
+    "MY TIPSTERS",
+    "BALANCE",
+    "SETTINGS",
+    "SELLER ADMIN ",
+    "BUYER ADMIN",
+    "LOGOUT"
+  ];
+  final listOfMoreMenu2 = [
+    "NEWPICK+",
+    "TIPS",
+    "TIPSTERS",
+  ];
+  void _showPopupMenu(BuildContext context) async {
+    List<PopupMenuEntry<Object>> list = [];
+    for (var element in listOfMoreMenu) {
+      list.add(PopupMenuItem(
+          value: element,
+          enabled: true,
+          child: Column(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: GestureDetector(
+                    onTap: () {
+                      _selectMoreOption(
+                          listOfMoreMenu.indexOf(element), context);
+                    },
+                    child: Text(
+                      element.toString(),
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ),
+              Divider(
+                color: Colors.white,
+              )
+            ],
+          )));
+    }
+    var sizeOfScreen = MediaQuery.of(context).size;
+    await showMenu(
+        context: context,
+        color: appThemeBlue,
+        position: RelativeRect.fromLTRB(sizeOfScreen.width, 100, 0, 0),
+        items: list,
+        useRootNavigator: true);
+  }
+
+  void _showPopupMenu2(BuildContext context) async {
+    List<PopupMenuEntry<Object>> list = [];
+    for (var element in listOfMoreMenu2) {
+      list.add(PopupMenuItem(
+          value: element,
+          enabled: true,
+          child: Column(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: GestureDetector(
+                    onTap: () {
+                      _selectMoreOption2(
+                          listOfMoreMenu2.indexOf(element), context);
+                    },
+                    child: Text(element.toString(),
+                        style: TextStyle(color: Colors.white))),
+              ),
+              Divider(
+                color: Colors.white,
+              ),
+            ],
+          )));
+    }
+    var sizeOfScreen = MediaQuery.of(context).size;
+    await showMenu(
+        color: appThemeBlue,
+        context: context,
+        position: RelativeRect.fromLTRB(
+            sizeOfScreen.width, 100, MediaQuery.of(context).size.width / 2, 0),
+        items: list,
+        useRootNavigator: true);
+  }
+
+  void _selectMoreOption(int index, BuildContext context) {
+    switch (index) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+      case 6:
+        break;
+      case 7:
+        break;
+    }
+  }
+
+  void _selectMoreOption2(int index, BuildContext context) {
+    switch (index) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+      case 6:
+        break;
+      case 7:
+        break;
+    }
+  }
 
   @override
   void initState() {
@@ -47,29 +175,7 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appThemeBlue,
-        leading: Icon(Icons.menu),
-        actions: [
-          GestureDetector(
-            onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.keyboard_arrow_down,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
-      ),
+      appBar: commonAppBar(),
       body: SingleChildScrollView(
         controller: scrollController,
         child: Column(
