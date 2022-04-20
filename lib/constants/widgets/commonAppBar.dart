@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_susbscription.dart';
 import 'package:tipster/View/SELLER%20ADMIN/seller_admin_settings.dart';
+import 'package:tipster/View/TIPS/tips_logged_screen.dart';
 import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
+import 'package:tipster/View/blog_view.dart';
 import 'package:tipster/View/home_screen.dart';
 import 'package:tipster/View/home_screen_logged_id.dart';
 import 'package:tipster/View/publish_new_pick.dart';
@@ -116,14 +118,20 @@ class _commonAppBarState extends State<commonAppBar> {
   void _selectMoreOption(int index, BuildContext context) {
     switch (index) {
       case 0:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => BlogView()));
         break;
       case 1:
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => PublishNewPickScreen()));
         break;
       case 2:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TipsLoggedInScreen()));
         break;
       case 3:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => HomeScreenLogIn()));
         break;
       case 4:
         Navigator.push(context,
@@ -157,6 +165,8 @@ class _commonAppBarState extends State<commonAppBar> {
             MaterialPageRoute(builder: (context) => PublishNewPickScreen()));
         break;
       case 1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TipsLoggedInScreen()));
         break;
       case 2:
         Navigator.push(context,

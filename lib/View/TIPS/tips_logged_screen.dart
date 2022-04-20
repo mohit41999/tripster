@@ -2,107 +2,90 @@ import 'package:flutter/material.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
-class BlogView extends StatefulWidget {
-  const BlogView({Key? key}) : super(key: key);
+class TipsLoggedInScreen extends StatefulWidget {
+  const TipsLoggedInScreen({Key? key}) : super(key: key);
 
   @override
-  State<BlogView> createState() => _BlogViewState();
+  State<TipsLoggedInScreen> createState() => _TipsLoggedInScreenState();
 }
 
-class _BlogViewState extends State<BlogView> {
+class _TipsLoggedInScreenState extends State<TipsLoggedInScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _controller;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: commonAppBar(),
-      body: ListView(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height / 3,
-            width: double.infinity,
-            color: appThemelightBlue,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircleAvatar(
-                  radius: 80,
-                ),
-                Text(
-                  'Hi, I\'m Lorem!',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                )
-              ],
+            width: MediaQuery.of(context).size.width / 1.5,
+            child: TabBar(
+              tabs: [Tab(child: Text('ALL')), Tab(child: Text('MY TIPSTERS'))],
+              controller: _controller,
+              labelColor: appThemelightPink,
+              indicatorColor: appThemelightPink,
+              unselectedLabelColor: Colors.grey,
             ),
           ),
-          Container(
-              height: 50,
-              width: double.infinity,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 40,
               color: appThemeBlue,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text('1458\nPICKS',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center),
-                  Text('+273\nPROFITS',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center),
-                  Text('+13%\nYIELD',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center),
-                  Text(
-                    '5425\nFOLLOWERS',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: 120,
-                height: 35,
-                decoration: BoxDecoration(
-                    color: appThemeBlue,
-                    borderRadius: BorderRadius.circular(4)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.shopping_cart,
-                      color: Colors.white,
-                      size: 20,
-                    ),
                     Text(
-                      '55\$/MONTH',
-                      style: TextStyle(fontSize: 12, color: Colors.white),
+                      'SPORTS BETTING TIPS FEED',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Icon(
+                      Icons.refresh,
+                      color: Colors.white,
                     )
                   ],
                 ),
               ),
-              Container(
-                width: 120,
-                height: 35,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [Icon(Icons.person_add_alt), Text('FOLLOW')],
-                ),
-                decoration: BoxDecoration(
-                    border: Border.all(color: appThemeBlue),
-                    borderRadius: BorderRadius.circular(4)),
-              ),
-            ],
+            ),
           ),
-          Padding(
+          Expanded(
+            child: TabBarView(
+              controller: _controller,
+              children: [
+                AllTipsScreen(),
+                MyTipsScreen(),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class MyTipsScreen extends StatelessWidget {
+  const MyTipsScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               height: MediaQuery.of(context).size.height / 2,
@@ -128,9 +111,7 @@ class _BlogViewState extends State<BlogView> {
                               children: [
                                 Text(
                                   'OnlyElite',
-                                  style: TextStyle(
-                                      color: appThemelightPink,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: appThemelightPink),
                                 ),
                                 Text('11 Feb 2022 11:20'),
                                 Text('+14% (253)'),
@@ -226,7 +207,10 @@ class _BlogViewState extends State<BlogView> {
                                   )),
                               Row(
                                 children: [
-                                  Text('Likes (15)'),
+                                  Text(
+                                    'Likes (15)',
+                                    style: TextStyle(color: appThemelightPink),
+                                  ),
                                   SizedBox(
                                     width: 5,
                                   ),
@@ -290,8 +274,22 @@ class _BlogViewState extends State<BlogView> {
                 ],
               ),
             ),
-          ),
-          Padding(
+          );
+        });
+  }
+}
+
+class AllTipsScreen extends StatelessWidget {
+  const AllTipsScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               height: MediaQuery.of(context).size.height / 2.5,
@@ -327,6 +325,49 @@ class _BlogViewState extends State<BlogView> {
                             ),
                           ],
                         ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 35,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(Icons.person_add_alt),
+                                  Text('FOLLOW')
+                                ],
+                              ),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: appThemeBlue),
+                                  borderRadius: BorderRadius.circular(8)),
+                            ),
+                            Container(
+                              width: 100,
+                              height: 35,
+                              decoration: BoxDecoration(
+                                  color: appThemeBlue,
+                                  borderRadius: BorderRadius.circular(8)),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(
+                                    Icons.shopping_cart,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                  Text(
+                                    '55\$/MONTH',
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.white),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -394,9 +435,7 @@ class _BlogViewState extends State<BlogView> {
                 ],
               ),
             ),
-          )
-        ],
-      ),
-    );
+          );
+        });
   }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/SELLER%20ADMIN/seller_admin_settings.dart';
 import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
+import 'package:tipster/constants/widgets/buyer_admin_popup_widget.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BuyerAdminTransactions extends StatefulWidget {
@@ -14,7 +17,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -51,10 +54,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SellerAdminSettings()));
+                   buyerAdminDialog(context);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -226,7 +226,9 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                 Divider(),
               ],
             ),
-          )
+          ),
+
+          CommonBottomWidget()
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:tipster/View/login_screen.dart';
+import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonSignUpAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

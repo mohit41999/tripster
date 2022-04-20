@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
-import 'package:tipster/constants/methods.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletHistoryScreen extends StatefulWidget {

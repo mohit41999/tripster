@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_transactions.dart';
 import 'package:tipster/View/SELLER%20ADMIN/seller_admin_fees.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
+import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminSubscribers extends StatefulWidget {
@@ -18,7 +21,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
   Widget build(BuildContext context) {
     subscriptionStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -55,10 +58,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SellerAdminFeesEarnings()));
+                    sellerAdminDialog(context);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -522,7 +522,9 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                     ),
                   );
                 }),
-          )
+          ),
+
+          CommonBottomWidget()
         ],
       ),
     );

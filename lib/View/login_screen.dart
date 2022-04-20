@@ -3,6 +3,7 @@ import 'package:tipster/View/forgot_password_flow/forgot_password.dart';
 import 'package:tipster/View/home_screen_logged_id.dart';
 import 'package:tipster/View/landing_screen.dart';
 import 'package:tipster/View/signup_screen.dart';
+import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,10 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      appBar: commonSignUpAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

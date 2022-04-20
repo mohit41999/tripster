@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/SELLER%20ADMIN/seller_admin_earnings.dart';
+import 'package:tipster/View/change_personal_details_screen.dart';
+import 'package:tipster/View/settings_screen.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
+import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
+
+import '../../constants/widgets/commonAppBar.dart';
 
 class SellerAdminSettings extends StatefulWidget {
   const SellerAdminSettings({Key? key}) : super(key: key);
@@ -10,10 +16,397 @@ class SellerAdminSettings extends StatefulWidget {
 }
 
 class _SellerAdminSettingsState extends State<SellerAdminSettings> {
+  Future subscriptionDialog() async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.all(8),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            contentPadding: EdgeInsets.zero,
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  color: appThemeBlue,
+                  height: 40,
+                  width: double.infinity,
+                  child: Center(
+                      child: Text(
+                    'CHANGE SUBSCRIPTION PLANS',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Set the amounts  you wish your subscriber to pay for 30 days.',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                          'Allowed Price Range is 25 - 1000. 7 days plan is automatically calculated.',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Center(
+                                child: Text('Price',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                          Expanded(
+                            child: Text('%',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                          )
+                        ],
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        thickness: 2,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text('30 days',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                          Expanded(
+                              flex: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 35,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                          decoration: InputDecoration(
+                                            fillColor: Colors.white,
+                                            filled: true,
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                    color: Colors.grey,
+                                                    width: 1.0),
+                                                borderRadius:
+                                                    BorderRadius.circular(2)),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: appThemeBlue,
+                                                  width: 1.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                          height: 35,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            ),
+                                            color: Colors.grey.withOpacity(0.5),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('\$'),
+                                          ))
+                                    ],
+                                  ),
+                                ),
+                              )),
+                          Expanded(
+                              child: Text('100% ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text('7 days',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                          Expanded(
+                              flex: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 35,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                          decoration: InputDecoration(
+                                            fillColor: Colors.white,
+                                            filled: true,
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                    color: Colors.grey,
+                                                    width: 1.0),
+                                                borderRadius:
+                                                    BorderRadius.circular(2)),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: appThemeBlue,
+                                                  width: 1.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                          height: 35,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            ),
+                                            color: Colors.grey.withOpacity(0.5),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('\$'),
+                                          ))
+                                    ],
+                                  ),
+                                ),
+                              )),
+                          Expanded(
+                              child: Text('30% ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text('Pick',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                          Expanded(
+                              flex: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 35,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                          decoration: InputDecoration(
+                                            fillColor: Colors.white,
+                                            filled: true,
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                    color: Colors.grey,
+                                                    width: 1.0),
+                                                borderRadius:
+                                                    BorderRadius.circular(2)),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: appThemeBlue,
+                                                  width: 1.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                          height: 35,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            ),
+                                            color: Colors.grey.withOpacity(0.5),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('\$'),
+                                          ))
+                                    ],
+                                  ),
+                                ),
+                              )),
+                          Expanded(
+                              child: Text('10% ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(child: Container()),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: appThemelightPink,
+                                borderRadius: BorderRadius.circular(3)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6.0, vertical: 2.0),
+                              child: Text(
+                                'Cancel',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: appThemeteal,
+                                borderRadius: BorderRadius.circular(3)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6.0, vertical: 2.0),
+                              child: Text(
+                                'Submit',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
+  Future serviceDialog() async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            actions: [
+              Row(
+                children: [
+                  Expanded(child: Container()),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: appThemelightPink,
+                        borderRadius: BorderRadius.circular(3)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6.0, vertical: 2.0),
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: appThemeteal,
+                        borderRadius: BorderRadius.circular(3)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6.0, vertical: 2.0),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                ],
+              ),
+            ],
+            insetPadding: EdgeInsets.all(8),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            contentPadding: EdgeInsets.zero,
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  color: appThemeBlue,
+                  height: 40,
+                  width: double.infinity,
+                  child: Center(
+                      child: Text(
+                    'CHANGE SERVICE DESCRIPTION',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 50,
+                          width: double.maxFinite,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              filled: true,
+                              hintText: 'B /',
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 1.0),
+                                  borderRadius: BorderRadius.circular(2)),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: appThemeBlue, width: 1.0),
+                                borderRadius: BorderRadius.circular(2),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text('Provide Information about your service'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -50,10 +443,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SellerAdminEarnings()));
+                    sellerAdminDialog(context);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -104,17 +494,21 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                     SizedBox(
                       height: 15,
                     ),
-                    Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: appThemelightPink,
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 8.0),
-                          child: Text(
-                            'CHANGE',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                    GestureDetector(
+                      onTap: () => subscriptionDialog(),
+                      child: Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: appThemelightPink,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 8.0),
+                            child: Text(
+                              'CHANGE',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
                           ),
                         ),
                       ),
@@ -142,17 +536,23 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                     SizedBox(
                       height: 15,
                     ),
-                    Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: appThemelightPink,
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 8.0),
-                          child: Text(
-                            'CHANGE',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                    GestureDetector(
+                      onTap: () {
+                        serviceDialog();
+                      },
+                      child: Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: appThemelightPink,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 8.0),
+                            child: Text(
+                              'CHANGE',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
                           ),
                         ),
                       ),
@@ -179,17 +579,27 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                     SizedBox(
                       height: 15,
                     ),
-                    Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: appThemelightPink,
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 8.0),
-                          child: Text(
-                            'CHANGE',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ChangePersonalDetailsScreen()));
+                      },
+                      child: Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: appThemelightPink,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 8.0),
+                            child: Text(
+                              'CHANGE',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
                           ),
                         ),
                       ),
@@ -202,6 +612,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
               ],
             ),
           ),
+          CommonBottomWidget()
         ],
       ),
     );

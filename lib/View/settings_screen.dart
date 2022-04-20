@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/WALLET/wallet_history_screen.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(

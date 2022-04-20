@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_transactions.dart';
+import 'package:tipster/constants/widgets/buyer_admin_popup_widget.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BuyerAdminSubscriptions extends StatefulWidget {
@@ -18,7 +21,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
   Widget build(BuildContext context) {
     subscriptionStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -55,10 +58,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => BuyerAdminTransactions()));
+                    buyerAdminDialog(context);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -392,7 +392,9 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                     ),
                   );
                 }),
-          )
+          ),
+
+          CommonBottomWidget()
         ],
       ),
     );

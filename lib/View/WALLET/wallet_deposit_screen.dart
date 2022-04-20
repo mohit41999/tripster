@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/WALLET/wallet_history_screen.dart';
 import 'package:tipster/View/WALLET/wallet_withdraw_screen.dart';
-import 'package:tipster/constants/methods.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletDepositScreen extends StatefulWidget {
@@ -60,7 +60,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    walletDialog(context);
+                   walletDialog(context);
                   },
                   child: Container(
                     width: 150,
@@ -194,12 +194,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                   child: Container(
                     width: 100,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => WalletWithdrawScreen()));
-                      },
+                      onPressed: () {},
                       child: Text('Deposit'),
                       style: ButtonStyle(
                           backgroundColor:

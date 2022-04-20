@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/SELLER%20ADMIN/seller_admin_subscribers.dart';
 import 'package:tipster/View/publish_new_pick.dart';
+import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
+import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminFeesEarnings extends StatefulWidget {
@@ -15,7 +18,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonAppBar(),
       body: ListView(
         children: [
           Padding(
@@ -53,10 +56,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PublishNewPickScreen()));
+                    sellerAdminDialog(context);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -235,7 +235,8 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                 ),
               ],
             ),
-          )
+          ),
+          CommonBottomWidget()
         ],
       ),
     );

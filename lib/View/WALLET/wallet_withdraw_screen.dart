@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/View/change_personal_details_screen.dart';
-import 'package:tipster/constants/methods.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
+import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletWithdrawScreen extends StatefulWidget {
@@ -122,6 +122,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                   height: 10,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Choose account:',
@@ -189,13 +190,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                   child: Container(
                     width: 100,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ChangePersonalDetailsScreen()));
-                      },
+                      onPressed: () {},
                       child: Text('Withdraw'),
                       style: ButtonStyle(
                           backgroundColor:
