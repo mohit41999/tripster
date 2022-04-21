@@ -59,6 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Container(
                           height: 30,
                           child: TextField(
@@ -80,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,6 +92,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Container(
                           height: 30,
                           child: TextField(
