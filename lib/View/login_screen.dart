@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tipster/View/forgot_password_flow/forgot_password.dart';
 import 'package:tipster/View/home_screen_logged_id.dart';
 import 'package:tipster/View/landing_screen.dart';
 import 'package:tipster/View/signup_screen.dart';
+import 'package:tipster/constants/widgets/commonBtn.dart';
 import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
@@ -21,154 +23,226 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          height: MediaQuery.of(context).size.height / 2,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: appThemeBlue,
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(10),
-                        topLeft: Radius.circular(10))),
-                child: Center(
-                  child: Text(
-                    'LOG IN',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: appThemeBlue,
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          topLeft: Radius.circular(10))),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.close,
+                          color: appThemeBlue,
+                          size: 35,
+                        ),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            'LOG IN',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                      )
+                    ],
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
+                commonSizedbox(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Email Address',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          height: 30,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: Colors.grey, width: 1.0),
-                                  borderRadius: BorderRadius.circular(7)),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
-                                borderRadius: BorderRadius.circular(7),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: appThemeBlue,
+                      child: Icon(FontAwesomeIcons.google, color: Colors.white),
                     ),
                     SizedBox(
-                      height: 10,
+                      width: 10,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Password',
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: appThemeBlue,
+                      child: Icon(
+                        FontAwesomeIcons.facebookF,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: appThemeBlue,
+                      child: Icon(FontAwesomeIcons.apple, color: Colors.white),
+                    ),
+                  ],
+                ),
+                commonSizedbox(),
+                Center(
+                    child: Text(
+                  'or',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Email Address',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          height: 30,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            height: 30,
+                            child: TextField(
+                              maxLines: 1,
+                              decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                isDense: true,
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 4, vertical: 6),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Colors.grey, width: 1.0),
+                                    borderRadius: BorderRadius.circular(7)),
+                                focusedBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
-                                      color: Colors.grey, width: 1.0),
-                                  borderRadius: BorderRadius.circular(7)),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
-                                borderRadius: BorderRadius.circular(7),
+                                      color: appThemeBlue, width: 1.0),
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Checkbox(value: true, onChanged: (v) {}),
-                            Text('Remember me')
-                          ],
-                        ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ForgotPassword()));
-                            },
-                            child: Text(
-                              'Forgot Password?',
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Password',
                               style: TextStyle(
-                                  color: Colors.black.withOpacity(0.5),
-                                  decoration: TextDecoration.underline),
-                            ))
-                      ],
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreenLogIn()));
-                      },
-                      child: Text('LOG IN'),
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(appThemeBlue)),
-                    ),
-                    Text('Don\'t have an account?'),
-                    TextButton(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            height: 30,
+                            child: TextField(
+                              maxLines: 1,
+                              decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                isDense: true,
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 4, vertical: 6),
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Colors.grey, width: 1.0),
+                                    borderRadius: BorderRadius.circular(7)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: appThemeBlue, width: 1.0),
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Checkbox(value: true, onChanged: (v) {}),
+                              Text('Remember me')
+                            ],
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgotPassword()));
+                              },
+                              child: Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.5),
+                                    decoration: TextDecoration.underline),
+                              ))
+                        ],
+                      ),
+                      ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignUpScreen()));
+                                  builder: (context) => HomeScreenLogIn()));
                         },
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.black.withOpacity(0.7)),
-                        ))
-                  ],
+                        child: Text('LOG IN'),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(appThemeBlue)),
+                      ),
+                      commonSizedbox(),
+                      Text('Don\'t have an account?'),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpScreen()));
+                          },
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.black.withOpacity(0.7)),
+                          ))
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

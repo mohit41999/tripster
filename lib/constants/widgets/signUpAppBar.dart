@@ -21,32 +21,39 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
   }
 
   final listOfMoreMenu = [
-    "Tips",
-    "Tipsters",
+    "TIPS",
+    "TIPSTERS",
   ];
   void _showPopupMenu(BuildContext context) async {
     List<PopupMenuEntry<dynamic>> list = [];
     for (var element in listOfMoreMenu) {
       list.add(PopupMenuItem(
           value: element,
+          padding: EdgeInsets.zero,
           enabled: true,
           child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: GestureDetector(
-                    onTap: () {
-                      _selectMoreOption(
-                          listOfMoreMenu.indexOf(element), context);
-                    },
+              GestureDetector(
+                onTap: () {
+                  _selectMoreOption(listOfMoreMenu.indexOf(element), context);
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
                     child: Text(
                       element.toString(),
                       style: TextStyle(color: Colors.white),
-                    )),
+                    ),
+                  ),
+                ),
               ),
-              Divider(
-                color: Colors.white,
-              ),
+              (listOfMoreMenu.indexOf(element) + 1 == listOfMoreMenu.length)
+                  ? SizedBox()
+                  : Divider(
+                      color: Colors.white,
+                      height: 0,
+                    ),
             ],
           )));
       // list.add(PopupMenuDivider());
@@ -77,8 +84,18 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
   Widget getAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.grey,
+      leadingWidth: 66,
       leading: GestureDetector(
-        child: Icon(Icons.menu),
+        child: Container(
+          height: double.maxFinite,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 10),
+            child: Icon(
+              Icons.menu,
+              size: 40,
+            ),
+          ),
+        ),
         onTap: () {
           _showPopupMenu(context);
         },
@@ -96,8 +113,8 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(color: Colors.white, width: 2)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: Text('Log In')),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Center(child: Text('LOGIN')),
                 )),
           ),
         ),
@@ -115,7 +132,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Center(child: Text('Sign Up')),
+                  child: Center(child: Text('SIGNUP')),
                 )),
           ),
         ),

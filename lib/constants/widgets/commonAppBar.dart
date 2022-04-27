@@ -47,30 +47,35 @@ class _commonAppBarState extends State<commonAppBar> {
     for (var element in listOfMoreMenu) {
       list.add(PopupMenuItem(
           value: element,
+          padding: EdgeInsets.zero,
           enabled: true,
           child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: GestureDetector(
-                    onTap: () {
-                      _selectMoreOption(
-                          listOfMoreMenu.indexOf(element), context);
-                    },
-                    child: Center(
-                      child: Text(
-                        element.toString(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    )),
+              GestureDetector(
+                onTap: () {
+                  _selectMoreOption(listOfMoreMenu.indexOf(element), context);
+                },
+                child: Container(
+                  height: 50,
+                  color: Colors.transparent,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: Text(
+                      element.toString(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
-              (listOfMoreMenu.indexOf(element) + 1 < listOfMoreMenu.length)
-                  ? Divider(
+              (listOfMoreMenu.indexOf(element) + 1 == listOfMoreMenu.length)
+                  ? SizedBox()
+                  : Divider(
                       color: Colors.white,
-                    )
-                  : SizedBox()
+                      height: 0,
+                    ),
             ],
           )));
+      // list.add(PopupMenuDivider());
     }
     var sizeOfScreen = MediaQuery.of(context).size;
     await showMenu(
@@ -86,24 +91,34 @@ class _commonAppBarState extends State<commonAppBar> {
     for (var element in listOfMoreMenu2) {
       list.add(PopupMenuItem(
           value: element,
+          padding: EdgeInsets.zero,
           enabled: true,
           child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: GestureDetector(
-                    onTap: () {
-                      _selectMoreOption2(
-                          listOfMoreMenu2.indexOf(element), context);
-                    },
-                    child: Text(element.toString(),
-                        style: TextStyle(color: Colors.white))),
+              GestureDetector(
+                onTap: () {
+                  _selectMoreOption2(listOfMoreMenu2.indexOf(element), context);
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: Text(
+                      element.toString(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
-              Divider(
-                color: Colors.white,
-              ),
+              (listOfMoreMenu2.indexOf(element) + 1 == listOfMoreMenu2.length)
+                  ? SizedBox()
+                  : Divider(
+                      color: Colors.white,
+                      height: 0,
+                    ),
             ],
           )));
+      // list.add(PopupMenuDivider());
     }
     var sizeOfScreen = MediaQuery.of(context).size;
     await showMenu(
@@ -178,29 +193,43 @@ class _commonAppBarState extends State<commonAppBar> {
   Widget getAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: appThemeBlue,
+      leadingWidth: 66,
       leading: GestureDetector(
-        child: Icon(Icons.menu),
+        child: Container(
+          height: double.maxFinite,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 10),
+            child: Icon(
+              Icons.menu,
+              size: 40,
+            ),
+          ),
+        ),
         onTap: () {
           _showPopupMenu2(context);
         },
       ),
       actions: [
         GestureDetector(
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(),
-          ),
-        ),
-        GestureDetector(
           onTap: () {
             _showPopupMenu(context);
           },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.keyboard_arrow_down,
-              color: Colors.white,
+          child: Container(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10.0, right: 20.0),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

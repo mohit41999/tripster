@@ -27,3 +27,6 @@ Widget commonBtn(
     ),
   );
 }
+Widget commonSizedbox() => SizedBox(
+  height: 10,
+);
