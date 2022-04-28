@@ -1,8 +1,10 @@
+import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tipster/View/TIPS/tips_logged_screen.dart';
 import 'package:tipster/View/login_screen.dart';
 import 'package:tipster/View/signup_screen.dart';
+import 'package:tipster/constants/widgets/commonBtn.dart';
 import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
@@ -229,8 +231,17 @@ class _HomeScreenState extends State<HomeScreen>
                               ),
                               child: Column(
                                 children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
                                   CircleAvatar(
-                                    radius: 40,
+                                    radius: 45,
+                                    backgroundColor: Colors.white,
+                                    child: Icon(
+                                      Icons.person,
+                                      color: Colors.black,
+                                      size: 40,
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 5,
@@ -251,6 +262,11 @@ class _HomeScreenState extends State<HomeScreen>
                                         color: Colors.white, fontSize: 14),
                                   ),
                                   SizedBox(
+                                    height: 5,
+                                  ),
+                                  Flag.fromCode(FlagsCode.RO,
+                                      height: 10, width: 20, fit: BoxFit.fill),
+                                  SizedBox(
                                     height: 10,
                                   ),
                                 ],
@@ -262,29 +278,55 @@ class _HomeScreenState extends State<HomeScreen>
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                          child: Center(
-                                              child: Text(
-                                        '2015',
-                                        style: subscriptionStyle,
-                                      ))),
-                                      Expanded(
-                                          child: Center(
-                                              child: Text('2574',
-                                                  style: subscriptionStyle))),
-                                      Expanded(
-                                          child: Center(
-                                              child: Text('+157',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 16,
-                                                      color:
-                                                          appThemelightPink)))),
-                                    ],
-                                  ),
+                                  (index % 3 == 0)
+                                      ? Row(
+                                          children: [
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text(
+                                              '2015',
+                                              style: subscriptionStyle,
+                                            ))),
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text('2574',
+                                                        style:
+                                                            subscriptionStyle))),
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text('-157',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 16,
+                                                            color:
+                                                                appThemelightPink)))),
+                                          ],
+                                        )
+                                      : Row(
+                                          children: [
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text(
+                                              '2015',
+                                              style: subscriptionStyle,
+                                            ))),
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text('2574',
+                                                        style:
+                                                            subscriptionStyle))),
+                                            Expanded(
+                                                child: Center(
+                                                    child: Text('+157',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 16,
+                                                            color:
+                                                                appThemeteal)))),
+                                          ],
+                                        ),
                                   SizedBox(
                                     height: 10,
                                   ),
@@ -316,34 +358,73 @@ class _HomeScreenState extends State<HomeScreen>
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                          child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 16.0),
-                                        child: Align(
-                                            alignment: Alignment.centerRight,
-                                            child: Text('+24%',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 16,
-                                                    color: appThemelightPink))),
-                                      )),
-                                      Expanded(
-                                          child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 16.0),
-                                        child: Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text('9735',
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16,
-                                                ))),
-                                      )),
-                                    ],
-                                  ),
+                                  (index % 3 == 0)
+                                      ? Row(
+                                          children: [
+                                            Expanded(
+                                                child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 16.0),
+                                              child: Align(
+                                                  alignment:
+                                                      Alignment.centerRight,
+                                                  child: Text('-24%',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 16,
+                                                          color:
+                                                              appThemelightPink))),
+                                            )),
+                                            Expanded(
+                                                child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 16.0),
+                                              child: Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text('9735',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 16,
+                                                      ))),
+                                            )),
+                                          ],
+                                        )
+                                      : Row(
+                                          children: [
+                                            Expanded(
+                                                child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 16.0),
+                                              child: Align(
+                                                  alignment:
+                                                      Alignment.centerRight,
+                                                  child: Text('+24%',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 16,
+                                                          color:
+                                                              appThemeteal))),
+                                            )),
+                                            Expanded(
+                                                child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 16.0),
+                                              child: Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text('9735',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 16,
+                                                      ))),
+                                            )),
+                                          ],
+                                        ),
                                   SizedBox(
                                     height: 10,
                                   ),
@@ -374,8 +455,12 @@ class _HomeScreenState extends State<HomeScreen>
                                       )),
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: 10,
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 4.0, vertical: 10.0),
+                                    child: Divider(
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                   Row(
                                     children: [
@@ -406,32 +491,37 @@ class _HomeScreenState extends State<HomeScreen>
                                         ),
                                       ),
                                       Expanded(
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Container(
-                                            height: 30,
-                                            decoration: BoxDecoration(
-                                                color: appThemeBlue,
-                                                borderRadius:
-                                                    BorderRadius.circular(4)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.add_shopping_cart,
-                                                  color: Colors.white,
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  '55\$/MONTH',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                )
-                                              ],
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            confirmPurchaseDialog(context);
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 8.0),
+                                            child: Container(
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                  color: appThemeBlue,
+                                                  borderRadius:
+                                                      BorderRadius.circular(4)),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.add_shopping_cart,
+                                                    color: Colors.white,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  Text(
+                                                    '55\€/MONTH',
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -455,5 +545,73 @@ class _HomeScreenState extends State<HomeScreen>
         ],
       ),
     );
+  }
+
+  Future confirmPurchaseDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            contentPadding: EdgeInsets.all(10),
+            insetPadding: EdgeInsets.all(4),
+            titlePadding: EdgeInsets.zero,
+            title: Container(
+                color: appThemeBlue,
+                child: Center(
+                    child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'CONFIRM PURCHASE',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ))),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                    'By confirming you will get subscribed to \"bloggername\"services and 35€ will be substracted from your balance ')
+              ],
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(0)),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'CANCEL',
+                        ),
+                      ),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(appThemelightPink)),
+                    ),
+                  ),
+                  Container(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(0)),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'CONFIRM',
+                        ),
+                      ),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(appThemeteal)),
+                    ),
+                  )
+                ],
+              )
+            ],
+          );
+        });
   }
 }

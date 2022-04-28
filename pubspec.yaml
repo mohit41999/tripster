@@ -37,6 +37,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   marquee: ^2.2.1
   syncfusion_flutter_charts: ^20.1.51
+  flag: ^6.0.0
 
 dev_dependencies:
   flutter_test:
