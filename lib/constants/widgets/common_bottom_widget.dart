@@ -71,6 +71,9 @@ class CommonBottomWidget extends StatelessWidget {
               'Privacy Policy',
               style: TextStyle(decoration: TextDecoration.underline),
             ),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

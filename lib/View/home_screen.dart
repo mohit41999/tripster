@@ -2,6 +2,7 @@ import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tipster/View/TIPS/tips_logged_screen.dart';
+import 'package:tipster/View/blog_view.dart';
 import 'package:tipster/View/login_screen.dart';
 import 'package:tipster/View/signup_screen.dart';
 import 'package:tipster/constants/widgets/commonBtn.dart';
@@ -234,13 +235,25 @@ class _HomeScreenState extends State<HomeScreen>
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  CircleAvatar(
-                                    radius: 45,
-                                    backgroundColor: Colors.white,
-                                    child: Icon(
-                                      Icons.person,
-                                      color: Colors.black,
-                                      size: 40,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BlogView()));
+                                    },
+                                    child: Container(
+                                      color: Colors.transparent,
+                                      child: CircleAvatar(
+                                        radius: 45,
+                                        backgroundColor: Colors.white,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.black,
+                                          size: 40,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   SizedBox(
@@ -538,10 +551,34 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                     ),
-                    (index + 1 == 10) ? CommonBottomWidget() : Container()
+                    (index + 1 == 10)
+                        ? SizedBox(
+                            height: 30,
+                          )
+                        : Container(),
+                    (index + 1 == 10)
+                        ? Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: appThemeBlue,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Show more',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ))
+                        : Container(),
+                    (index + 1 == 10)
+                        ? SizedBox(
+                            height: 20,
+                          )
+                        : Container(),
                   ],
                 );
               }),
+          CommonBottomWidget()
         ],
       ),
     );
@@ -577,14 +614,18 @@ class _HomeScreenState extends State<HomeScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
+                    height: 31,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(0)),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'CANCEL',
+                          style: TextStyle(fontSize: 12),
                         ),
                       ),
                       style: ButtonStyle(
@@ -593,14 +634,18 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                   ),
                   Container(
+                    height: 31,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(0)),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'CONFIRM',
+                          style: TextStyle(fontSize: 12),
                         ),
                       ),
                       style: ButtonStyle(

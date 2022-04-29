@@ -222,7 +222,10 @@ class _commonAppBarState extends State<commonAppBar> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(),
+                    child: CircleAvatar(
+                      backgroundImage:
+                          AssetImage('assets/images/profile_picture.png'),
+                    ),
                   ),
                   Icon(
                     Icons.keyboard_arrow_down,
