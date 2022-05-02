@@ -3,6 +3,7 @@ import 'package:tipster/View/home_screen.dart';
 import 'package:tipster/View/my_coupon_saved_screen.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonBtn.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class MyCouponScreen extends StatefulWidget {
@@ -13,6 +14,9 @@ class MyCouponScreen extends StatefulWidget {
 }
 
 class _MyCouponScreenState extends State<MyCouponScreen> {
+  bool paidPick = true;
+  bool freePick = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +27,11 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
             padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
             child: Container(
               height: 50,
-              color: appThemeBlue,
+              decoration: BoxDecoration(
+                  color: appThemeBlue,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(8.0),
+                      topLeft: Radius.circular(8.0))),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
@@ -64,7 +72,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                                   style: TextStyle(color: Colors.white),
                                 ),
                                 Icon(
-                                  Icons.cancel,
+                                  Icons.close,
                                   color: Colors.white,
                                 )
                               ],
@@ -131,7 +139,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                                   style: TextStyle(color: Colors.white),
                                 ),
                                 Icon(
-                                  Icons.cancel,
+                                  Icons.close,
                                   color: Colors.white,
                                 )
                               ],
@@ -187,7 +195,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'data',
+                          'data:',
                           style: TextStyle(color: Colors.white),
                         ),
                         Text(
@@ -203,7 +211,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'data',
+                          'data:',
                           style: TextStyle(color: Colors.white),
                         ),
                         Container(
@@ -216,6 +224,77 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  freePick = !freePick;
+                                  paidPick = (freePick) ? false : true;
+                                });
+                              },
+                              child: Container(
+                                height: 18,
+                                width: 18,
+                                decoration: BoxDecoration(
+                                    color: (paidPick)
+                                        ? appThemeBlue
+                                        : Colors.white,
+                                    border: Border.all(
+                                        color: Colors.white, width: 2),
+                                    shape: BoxShape.circle),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              'Paid Pick',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  paidPick = !paidPick;
+                                  freePick = (paidPick) ? false : true;
+                                });
+                              },
+                              child: Container(
+                                height: 18,
+                                width: 18,
+                                decoration: BoxDecoration(
+                                    color: (freePick)
+                                        ? appThemeBlue
+                                        : Colors.white,
+                                    border: Border.all(
+                                        color: Colors.white, width: 2),
+                                    shape: BoxShape.circle),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              'Free Pick',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -269,7 +348,8 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          CommonBottomWidget()
         ],
       ),
     );

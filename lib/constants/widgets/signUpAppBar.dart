@@ -39,6 +39,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                 },
                 child: Container(
                   height: 50,
+                  color: Colors.transparent,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
                     child: Text(
@@ -50,9 +51,12 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
               ),
               (listOfMoreMenu.indexOf(element) + 1 == listOfMoreMenu.length)
                   ? SizedBox()
-                  : Divider(
-                      color: Colors.white,
-                      height: 0,
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Divider(
+                        color: Colors.white,
+                        height: 0,
+                      ),
                     ),
             ],
           )));

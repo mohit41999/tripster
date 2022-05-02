@@ -10,6 +10,8 @@ Future walletDialog(BuildContext context) async {
       builder: (context) {
         return AlertDialog(
           titlePadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          insetPadding: EdgeInsets.all(65),
           title: Container(
               color: appThemeBlue,
               child: Center(
@@ -31,8 +33,17 @@ Future walletDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => WalletHistoryScreen()));
                   },
-                  child: Text('HISTORY')),
-              Divider(),
+                  child: Container(
+                      color: Colors.transparent,
+                      width: double.maxFinite,
+                      child: Center(
+                          child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Text('HISTORY'),
+                      )))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -41,8 +52,17 @@ Future walletDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => WalletDepositScreen()));
                   },
-                  child: Text('DEPOSIT')),
-              Divider(),
+                  child: Container(
+                      color: Colors.transparent,
+                      width: double.maxFinite,
+                      child: Center(
+                          child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Text('DEPOSIT'),
+                      )))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -51,7 +71,14 @@ Future walletDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => WalletWithdrawScreen()));
                   },
-                  child: Text('WITHDRAW')),
+                  child: Container(
+                      color: Colors.transparent,
+                      width: double.maxFinite,
+                      child: Center(
+                          child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Text('WITHDRAW'),
+                      )))),
             ],
           ),
         );

@@ -1,5 +1,7 @@
+import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:tipster/View/blog_view.dart';
 import 'package:tipster/View/login_screen.dart';
 import 'package:tipster/View/publish_new_pick.dart';
 import 'package:tipster/View/signup_screen.dart';
@@ -224,259 +226,422 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8.0, right: 8.0, bottom: 10.0),
-                            child: Material(
-                              elevation: 2.0,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    width: double.maxFinite,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xff3C78B5),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 40,
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0, bottom: 10.0),
+                                child: Material(
+                                  elevation: 2.0,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: double.maxFinite,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff3C78B5),
                                         ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'WinnerOU',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'winnerou.webname.com',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 14),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
+                                        child: Column(
                                           children: [
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text(
-                                              '2015',
-                                              style: subscriptionStyle,
-                                            ))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('2574',
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            BlogView()));
+                                              },
+                                              child: Container(
+                                                color: Colors.transparent,
+                                                child: CircleAvatar(
+                                                  radius: 45,
+                                                  backgroundColor: Colors.white,
+                                                  child: Icon(
+                                                    Icons.person,
+                                                    color: Colors.black,
+                                                    size: 40,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'WinnerOU',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'winnerou.webname.com',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 14),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Flag.fromCode(FlagsCode.RO,
+                                                height: 10,
+                                                width: 20,
+                                                fit: BoxFit.fill),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            (index % 3 == 0)
+                                                ? Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                        '2015',
                                                         style:
-                                                            subscriptionStyle))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('+157',
-                                                        style: TextStyle(
+                                                            subscriptionStyle,
+                                                      ))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '2574',
+                                                                  style:
+                                                                      subscriptionStyle))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '-157',
+                                                                  style: TextStyle(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          16,
+                                                                      color:
+                                                                          appThemelightPink)))),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                        '2015',
+                                                        style:
+                                                            subscriptionStyle,
+                                                      ))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '2574',
+                                                                  style:
+                                                                      subscriptionStyle))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '+157',
+                                                                  style: TextStyle(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          16,
+                                                                      color:
+                                                                          appThemeteal)))),
+                                                    ],
+                                                  ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Since',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Picks',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Profit',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            (index % 3 == 0)
+                                                ? Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerRight,
+                                                            child: Text('-24%',
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color:
+                                                                        appThemelightPink))),
+                                                      )),
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerLeft,
+                                                            child: Text('9735',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 16,
+                                                                ))),
+                                                      )),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerRight,
+                                                            child: Text('+24%',
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color:
+                                                                        appThemeteal))),
+                                                      )),
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerLeft,
+                                                            child: Text('9735',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 16,
+                                                                ))),
+                                                      )),
+                                                    ],
+                                                  ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                    child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 16.0),
+                                                  child: Align(
+                                                      alignment:
+                                                          Alignment.centerRight,
+                                                      child: Text('Yield',
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12))),
+                                                )),
+                                                Expanded(
+                                                    child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 16.0),
+                                                  child: Align(
+                                                      alignment:
+                                                          Alignment.centerLeft,
+                                                      child: Text('Followers',
+                                                          style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            fontSize: 16,
-                                                            color:
-                                                                appThemelightPink)))),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Since',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Picks',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Profit',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Text('+24%',
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 16,
-                                                          color:
-                                                              appThemelightPink))),
-                                            )),
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text('9735',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 16,
-                                                      ))),
-                                            )),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Text('Yield',
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12))),
-                                            )),
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text('Followers',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 12,
-                                                      ))),
-                                            )),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 8.0),
-                                                child: Container(
-                                                  height: 30,
-                                                  decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: appThemeBlue),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4)),
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(Icons
-                                                          .person_add_alt_1_outlined),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text('FOLLOW')
-                                                    ],
-                                                  ),
-                                                ),
+                                                            fontSize: 12,
+                                                          ))),
+                                                )),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 4.0,
+                                                      vertical: 10.0),
+                                              child: Divider(
+                                                color: Colors.grey,
                                               ),
                                             ),
-                                            Expanded(
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
                                                         horizontal: 8.0),
-                                                child: Container(
-                                                  height: 30,
-                                                  decoration: BoxDecoration(
-                                                      color: appThemeBlue,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4)),
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons.add_shopping_cart,
-                                                        color: Colors.white,
+                                                    child: Container(
+                                                      height: 30,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              color:
+                                                                  appThemeBlue),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(4)),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(Icons
+                                                              .person_add_alt_1_outlined),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text('FOLLOW')
+                                                        ],
                                                       ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text(
-                                                        '55\$/MONTH',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                      )
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
+                                                Expanded(
+                                                  child: GestureDetector(
+                                                    onTap: () {
+                                                      confirmPurchaseDialog(
+                                                          context);
+                                                    },
+                                                    child: Padding(
+                                                      padding: const EdgeInsets
+                                                              .symmetric(
+                                                          horizontal: 8.0),
+                                                      child: Container(
+                                                        height: 30,
+                                                        decoration: BoxDecoration(
+                                                            color: appThemeBlue,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4)),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .add_shopping_cart,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Text(
+                                                              '55\€/MONTH',
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .white),
+                                                            )
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
                                             ),
                                           ],
                                         ),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
+                              (index + 1 == 10)
+                                  ? SizedBox(
+                                      height: 30,
+                                    )
+                                  : Container(),
+                              (index + 1 == 10)
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        color: appThemeBlue,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          'Show more',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ))
+                                  : Container(),
+                              (index + 1 == 10)
+                                  ? SizedBox(
+                                      height: 20,
+                                    )
+                                  : Container(),
+                            ],
                           ),
                           Container(
                             color: Colors.grey.withOpacity(0.5),
@@ -493,191 +658,314 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8.0, right: 8.0, bottom: 10.0),
-                            child: Material(
-                              elevation: 2.0,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    width: double.maxFinite,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xff3C78B5),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 40,
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0, bottom: 10.0),
+                                child: Material(
+                                  elevation: 2.0,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: double.maxFinite,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff3C78B5),
                                         ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'WinnerOU',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'winnerou.webname.com',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 14),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
+                                        child: Column(
                                           children: [
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text(
-                                              '2015',
-                                              style: subscriptionStyle,
-                                            ))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('2574',
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            BlogView()));
+                                              },
+                                              child: Container(
+                                                color: Colors.transparent,
+                                                child: CircleAvatar(
+                                                  radius: 45,
+                                                  backgroundColor: Colors.white,
+                                                  child: Icon(
+                                                    Icons.person,
+                                                    color: Colors.black,
+                                                    size: 40,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'WinnerOU',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'winnerou.webname.com',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 14),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Flag.fromCode(FlagsCode.RO,
+                                                height: 10,
+                                                width: 20,
+                                                fit: BoxFit.fill),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            (index % 3 == 0)
+                                                ? Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                        '2015',
                                                         style:
-                                                            subscriptionStyle))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('+157',
-                                                        style: TextStyle(
+                                                            subscriptionStyle,
+                                                      ))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '2574',
+                                                                  style:
+                                                                      subscriptionStyle))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '-157',
+                                                                  style: TextStyle(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          16,
+                                                                      color:
+                                                                          appThemelightPink)))),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                        '2015',
+                                                        style:
+                                                            subscriptionStyle,
+                                                      ))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '2574',
+                                                                  style:
+                                                                      subscriptionStyle))),
+                                                      Expanded(
+                                                          child: Center(
+                                                              child: Text(
+                                                                  '+157',
+                                                                  style: TextStyle(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          16,
+                                                                      color:
+                                                                          appThemeteal)))),
+                                                    ],
+                                                  ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Since',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Picks',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                                Expanded(
+                                                    child: Center(
+                                                        child: Text('Profit',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12,
+                                                            )))),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            (index % 3 == 0)
+                                                ? Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerRight,
+                                                            child: Text('-24%',
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color:
+                                                                        appThemelightPink))),
+                                                      )),
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerLeft,
+                                                            child: Text('9735',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 16,
+                                                                ))),
+                                                      )),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    children: [
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerRight,
+                                                            child: Text('+24%',
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color:
+                                                                        appThemeteal))),
+                                                      )),
+                                                      Expanded(
+                                                          child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 16.0),
+                                                        child: Align(
+                                                            alignment: Alignment
+                                                                .centerLeft,
+                                                            child: Text('9735',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 16,
+                                                                ))),
+                                                      )),
+                                                    ],
+                                                  ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                    child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 16.0),
+                                                  child: Align(
+                                                      alignment:
+                                                          Alignment.centerRight,
+                                                      child: Text('Yield',
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 12))),
+                                                )),
+                                                Expanded(
+                                                    child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 16.0),
+                                                  child: Align(
+                                                      alignment:
+                                                          Alignment.centerLeft,
+                                                      child: Text('Followers',
+                                                          style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            fontSize: 16,
-                                                            color:
-                                                                appThemelightPink)))),
+                                                            fontSize: 12,
+                                                          ))),
+                                                )),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
                                           ],
                                         ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Since',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Picks',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                            Expanded(
-                                                child: Center(
-                                                    child: Text('Profit',
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12,
-                                                        )))),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Text('+24%',
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 16,
-                                                          color:
-                                                              appThemelightPink))),
-                                            )),
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text('9735',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 16,
-                                                      ))),
-                                            )),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Text('Yield',
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 12))),
-                                            )),
-                                            Expanded(
-                                                child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 16.0),
-                                              child: Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text('Followers',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 12,
-                                                      ))),
-                                            )),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                           Container(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: Colors.transparent,
                             height: (index + 1 == 10) ? 30 : 0,
                           ),
                           (index + 1 == 10) ? CommonBottomWidget() : SizedBox(),
@@ -715,5 +1003,81 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
         ),
       ),
     );
+  }
+
+  Future confirmPurchaseDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            contentPadding: EdgeInsets.all(10),
+            insetPadding: EdgeInsets.all(4),
+            titlePadding: EdgeInsets.zero,
+            title: Container(
+                color: appThemeBlue,
+                child: Center(
+                    child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'CONFIRM PURCHASE',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ))),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                    'By confirming you will get subscribed to \"bloggername\"services and 35€ will be substracted from your balance ')
+              ],
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 31,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(0)),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'CANCEL',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(appThemelightPink)),
+                    ),
+                  ),
+                  Container(
+                    height: 31,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(0)),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'CONFIRM',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(appThemeteal)),
+                    ),
+                  )
+                ],
+              )
+            ],
+          );
+        });
   }
 }

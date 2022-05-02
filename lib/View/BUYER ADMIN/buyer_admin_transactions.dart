@@ -23,211 +23,407 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: 60,
               decoration: BoxDecoration(
-                  color: appThemeBlue,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(8.0),
                       topLeft: Radius.circular(8.0))),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'BUYER ADMIN',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                   buyerAdminDialog(context);
-                  },
-                  child: Container(
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
                     decoration: BoxDecoration(
-                      color: appThemeBlue,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+                        color: appThemeBlue,
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(8.0),
+                            topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.menu,
-                            color: Colors.white,
-                            size: 25,
-                          ),
                           Text(
-                            'TRANSACTIONS',
+                            'BUYER ADMIN',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          )
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Filter from',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: 200,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey.withOpacity(0.5),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            buyerAdminDialog(context);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: appThemeBlue,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(
+                                    Icons.menu,
+                                    color: Colors.white,
+                                    size: 25,
+                                  ),
+                                  Text(
+                                    'TRANSACTIONS',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(child: Text('')),
-                            Icon(Icons.calendar_today_outlined)
+                            Text(
+                              'Filter from',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              width: 200,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.grey.withOpacity(0.5),
+                                  ),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(child: Text('')),
+                                    Icon(Icons.calendar_today_outlined)
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Filter to',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16)),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: 200,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey.withOpacity(0.5),
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(child: Text('')),
-                            Icon(Icons.calendar_today_outlined)
+                            Text('Filter to',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16)),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              width: 200,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.grey.withOpacity(0.5),
+                                  ),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(child: Text('')),
+                                    Icon(Icons.calendar_today_outlined)
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: Container(
-                    decoration: BoxDecoration(
+                        SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Center(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: appThemeBlue,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10.0, vertical: 8.0),
+                              child: Text(
+                                'Show',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 60,
+                      decoration: BoxDecoration(
                         color: appThemeBlue,
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 8.0),
-                      child: Text(
-                        'Show',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'TYPE',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 60,
-              decoration: BoxDecoration(
-                color: appThemeBlue,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'TYPE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Deposit 25.00'),
-                Text('WID:6c9413a3ee046418b70059b1b34c7038'),
-                Text('Skrill Transaction ID: 444555666'),
-                Text('Market Fee'),
-                Text('WID:6c9413a3ee046418b70059b1b34c7038'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(child: Text('Date')),
-                    Expanded(child: Text('29 Dec 2021, 16:34')),
-                  ],
-                ),
-                Divider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(flex: 2, child: Text('Amount')),
-                    Expanded(child: Text('-25')),
-                  ],
-                ),
-                Divider(),
-              ],
-            ),
-          ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                              text: 'Subscription ',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '25.00\€',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                        ),
+                        Text('WID:6c9413a3ee046418b70059b1b34c7038'),
+                        Text('Skrill Transaction ID: 444555666'),
+                        Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          width: double.infinity,
+                          child: DropdownButton<String>(
+                            onChanged: (newValue) {},
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
 
+                            dropdownColor: Colors.white,
+
+                            isExpanded: true,
+
+                            // Initial Value
+                            hint: Text(
+                              '',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: [
+                              DropdownMenuItem(
+                                value: '1',
+                                child: Text(
+                                  'Completed',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '2',
+                                child: Text(
+                                  'Pending',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '3',
+                                child: Text(
+                                  'Cancelled',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '4',
+                                child: Text(
+                                  'Refunded',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                            ],
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+
+                            value: '1',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                              text: 'Single bet ',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '5.00\€',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                        ),
+                        Text('WID:6c9413a3ee046418b70059b1b34c7038'),
+                        Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          width: double.infinity,
+                          child: DropdownButton<String>(
+                            onChanged: (newValue) {},
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+
+                            dropdownColor: Colors.white,
+
+                            isExpanded: true,
+
+                            // Initial Value
+                            hint: Text(
+                              '',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: [
+                              DropdownMenuItem(
+                                value: '1',
+                                child: Text(
+                                  'Completed',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '2',
+                                child: Text(
+                                  'Pending',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '3',
+                                child: Text(
+                                  'Cancelled',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '4',
+                                child: Text(
+                                  'Refunded',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                            ],
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+
+                            value: '1',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                                child: Text(
+                              'Date',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )),
+                            Expanded(
+                                child: Text(
+                              '29 Dec 2021, 16:34',
+                              textAlign: TextAlign.end,
+                            )),
+                            SizedBox(
+                              width: 20,
+                            ),
+                          ],
+                        ),
+                        Divider(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                                child: Text('Amount',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold))),
+                            Expanded(
+                                child: Text(
+                              '-25.00\€',
+                              style: TextStyle(
+                                  color: appThemelightPink,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.end,
+                            )),
+                            SizedBox(
+                              width: 20,
+                            ),
+                          ],
+                        ),
+                        Divider(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           CommonBottomWidget()
         ],
       ),

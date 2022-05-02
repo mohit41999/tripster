@@ -15,6 +15,7 @@ Future buyerAdminDialog(BuildContext context) async {
       context: context,
       builder: (context) {
         return AlertDialog(
+          contentPadding: EdgeInsets.zero,
           titlePadding: EdgeInsets.zero,
           title: Container(
               color: appThemeBlue,
@@ -37,8 +38,17 @@ Future buyerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => BuyerAdminSubscriptions()));
                   },
-                  child: Text('SUBSCRIPTIONS')),
-              Divider(),
+                  child: Container(
+                      color: Colors.transparent,
+                      width: double.maxFinite,
+                      child: Center(
+                          child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text('SUBSCRIPTIONS'),
+                      )))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -47,7 +57,14 @@ Future buyerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => BuyerAdminTransactions()));
                   },
-                  child: Text('TRANSACTIONS')),
+                  child: Container(
+                      color: Colors.transparent,
+                      width: double.maxFinite,
+                      child: Center(
+                          child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text('TRANSACTIONS'),
+                      )))),
             ],
           ),
         );

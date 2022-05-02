@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/tips_widgets.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonWidgets.dart';
+import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BlogView extends StatefulWidget {
@@ -37,6 +39,7 @@ class _BlogViewState extends State<BlogView> {
                 CircleAvatar(
                   radius: 80,
                   backgroundColor: appThemeBlue,
+                  backgroundImage: AssetImage('assets/images/profile.jpg'),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -352,359 +355,137 @@ class _BlogViewState extends State<BlogView> {
           Container(),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 2,
-              color: Colors.white,
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'OnlyElite',
-                                      style: TextStyle(
-                                          color: appThemelightPink,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text(
-                                      '11 Feb 2022 11:20',
-                                      style:
-                                          TextStyle(color: Color(0xffB5B5B5)),
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    Row(
-                                      children: [
-                                        commonFlag(),
-                                        SizedBox(
-                                          width: 3,
-                                        ),
-                                        Text('+14% (253)'),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider(),
-                  Expanded(
-                      flex: 3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 4.0),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.info_rounded,
-                                  color: Colors.transparent,
-                                ),
-                                Expanded(
-                                  child: Center(
-                                    child: Text(
-                                      'Sassuola v Roma',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.info_rounded,
-                                  color: appThemelightPink,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Text('Over 1.5(Match Goals) @ 1.667'),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: appThemelightBlue,
-                                    borderRadius: BorderRadius.circular(3)),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 6.0, vertical: 2.0),
-                                  child: Text(
-                                    '10/10',
-                                    style: TextStyle(
-                                        fontSize: 12, color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: appThemeteal,
-                                    borderRadius: BorderRadius.circular(3)),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 6.0, vertical: 2.0),
-                                  child: Text(
-                                    'bet365',
-                                    style: TextStyle(
-                                        fontSize: 12, color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset('assets/images/footbal_icon.png'),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                'Football / Livebet / Kick off: 13 Feb 2022, 19:00',
-                                style: TextStyle(
-                                    color: Colors.black.withOpacity(0.5)),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Divider(),
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(2),
-                                      border: Border.all(color: Colors.grey)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 4.0),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.thumb_up_off_alt,
-                                          size: 18,
-                                        ),
-                                        Text('Like')
-                                      ],
-                                    ),
-                                  )),
-                              Row(
-                                children: [
-                                  Text('Likes (15)'),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Comments '),
-                                      Text(
-                                        '(0)',
-                                        style:
-                                            TextStyle(color: appThemelightPink),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Container(
-                              color: Colors.grey.withOpacity(0.3),
-                              width: double.infinity,
-                              height: 50,
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                      child: TextField(
-                                    decoration: InputDecoration(
-                                      fillColor: Colors.transparent,
-                                      filled: true,
-                                      hintText: 'Write a comment',
-                                      hintStyle: TextStyle(fontSize: 12),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0),
-                                          borderRadius:
-                                              BorderRadius.circular(7)),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0),
-                                        borderRadius: BorderRadius.circular(7),
-                                      ),
-                                    ),
-                                  )),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: appThemelightPink,
-                                        borderRadius: BorderRadius.circular(4)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 8.0, vertical: 4.0),
-                                      child: Text(
-                                        'Comment',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ))
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 2.5,
-              color: Colors.white,
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 2,
+            child: Column(
+              children: [
+                Container(
+                  height: 40,
+                  decoration: BoxDecoration(color: appThemeBlue),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 40,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'OnlyElite',
-                                  style: TextStyle(
-                                      color: appThemelightPink,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('11 Feb 2022 11:20'),
-                                Text('+14% (253)'),
-                              ],
-                            ),
-                          ],
+                        Text(
+                          'PENDING PICKS',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Icon(
+                          Icons.refresh,
+                          color: Colors.white,
                         ),
                       ],
                     ),
                   ),
-                  Divider(),
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.lock),
-                              Text(
-                                'Paid pick',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          Wrap(
-                            children: [
-                              Text('You can see the pick only after'),
-                              Text(
-                                ' subscribing',
-                                style: TextStyle(color: appThemelightPink),
-                              ),
-                              Text(
-                                'or buying it for 5.00\$',
-                                style: TextStyle(),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: appThemelightPink,
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0, vertical: 4.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.shopping_cart,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              'Buy for 5.00 \$',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
+                ),
+                TipsWidget(),
+              ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+            child: TipsWidgetPaid(),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Container(
+                  height: 40,
+                  decoration: BoxDecoration(color: appThemeBlue),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'GRADED PICKS',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Icon(
+                          Icons.refresh,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                TipsWidgetWithFollow(),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+            child: TipsWidgetWithFollowEditAnnalysis(),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+            child: TipsWidgetPaidWithFollow(),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Container(
+                decoration: BoxDecoration(
+                    color: appThemeBlue,
+                    borderRadius: BorderRadius.circular(5)),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
+                  child: Text(
+                    'See Older',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Container(
+                  height: 35,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(5),
+                          topLeft: Radius.circular(5)),
+                      color: appThemeBlue),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'SERVICE DESCRIPTION',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 10.0),
+                    child: Text(
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+                  ),
+                )
+              ],
+            ),
+          ),
+          CommonBottomWidget()
         ],
       ),
     );

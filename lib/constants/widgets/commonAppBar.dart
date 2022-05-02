@@ -69,9 +69,12 @@ class _commonAppBarState extends State<commonAppBar> {
               ),
               (listOfMoreMenu.indexOf(element) + 1 == listOfMoreMenu.length)
                   ? SizedBox()
-                  : Divider(
-                      color: Colors.white,
-                      height: 0,
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Divider(
+                        color: Colors.white,
+                        height: 0,
+                      ),
                     ),
             ],
           )));
@@ -101,6 +104,7 @@ class _commonAppBarState extends State<commonAppBar> {
                 },
                 child: Container(
                   height: 50,
+                  color: Colors.transparent,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
                     child: Text(
@@ -112,9 +116,12 @@ class _commonAppBarState extends State<commonAppBar> {
               ),
               (listOfMoreMenu2.indexOf(element) + 1 == listOfMoreMenu2.length)
                   ? SizedBox()
-                  : Divider(
-                      color: Colors.white,
-                      height: 0,
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Divider(
+                        color: Colors.white,
+                        height: 0,
+                      ),
                     ),
             ],
           )));

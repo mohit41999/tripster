@@ -13,6 +13,7 @@ Future sellerAdminDialog(BuildContext context) async {
       context: context,
       builder: (context) {
         return AlertDialog(
+          contentPadding: EdgeInsets.zero,
           titlePadding: EdgeInsets.zero,
           title: Container(
               color: appThemeBlue,
@@ -35,8 +36,16 @@ Future sellerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => SellerAdminSettings()));
                   },
-                  child: Text('SETTINGS')),
-              Divider(),
+                  child: Container(
+                      width: double.maxFinite,
+                      color: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(child: Text('SETTINGS')),
+                      ))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -45,8 +54,16 @@ Future sellerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => SellerAdminEarnings()));
                   },
-                  child: Text('EARNINGS')),
-              Divider(),
+                  child: Container(
+                      width: double.maxFinite,
+                      color: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(child: Text('EARNINGS')),
+                      ))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -55,8 +72,16 @@ Future sellerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => SellerAdminSubscribers()));
                   },
-                  child: Text('SUBSCRIBERS')),
-              Divider(),
+                  child: Container(
+                      width: double.maxFinite,
+                      color: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(child: Text('SUBSCRIBERS')),
+                      ))),
+              Divider(
+                height: 0,
+              ),
               GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -65,7 +90,13 @@ Future sellerAdminDialog(BuildContext context) async {
                         MaterialPageRoute(
                             builder: (context) => SellerAdminFeesEarnings()));
                   },
-                  child: Text('FEES&EARNINGS')),
+                  child: Container(
+                      width: double.maxFinite,
+                      color: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(child: Text('FEES & EARNINGS')),
+                      ))),
             ],
           ),
         );
