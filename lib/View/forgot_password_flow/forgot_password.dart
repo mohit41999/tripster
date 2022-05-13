@@ -3,7 +3,7 @@ import 'package:tipster/View/forgot_password_flow/recovery_code.dart';
 import 'package:tipster/utils/colors.dart';
 
 class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+  ForgotPassword({Key? key}) : super(key: key);
 
   @override
   State<ForgotPassword> createState() => _ForgotPasswordState();
@@ -15,7 +15,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Container(
           height: MediaQuery.of(context).size.height / 3,
           decoration: BoxDecoration(
@@ -46,14 +46,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'We will send you a code to restore your password',
                   textAlign: TextAlign.left,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     Column(
@@ -71,12 +71,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -88,7 +88,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 20),
+                padding: EdgeInsets.only(bottom: 20),
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {

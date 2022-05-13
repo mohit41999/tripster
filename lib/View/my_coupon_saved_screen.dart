@@ -6,7 +6,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class MyCouponSavedScreen extends StatefulWidget {
-  const MyCouponSavedScreen({Key? key}) : super(key: key);
+  MyCouponSavedScreen({Key? key}) : super(key: key);
 
   @override
   State<MyCouponSavedScreen> createState() => _MyCouponSavedScreenState();
@@ -23,7 +23,7 @@ class _MyCouponSavedScreenState extends State<MyCouponSavedScreen> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
@@ -32,7 +32,7 @@ class _MyCouponSavedScreenState extends State<MyCouponSavedScreen> {
                           topRight: Radius.circular(8.0),
                           topLeft: Radius.circular(8.0))),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Row(
                       children: [
                         Text(
@@ -48,19 +48,19 @@ class _MyCouponSavedScreenState extends State<MyCouponSavedScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
                   color: appThemelightBlue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                             left: 8.0, right: 8.0, top: 32.0, bottom: 16.0),
                         child: Container(
                           color: appThemeBlue,
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

@@ -11,7 +11,7 @@ import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -29,13 +29,12 @@ class _HomeScreenState extends State<HomeScreen>
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               height: MediaQuery.of(context).size.height / 3,
               color: appThemeBlue,
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50.0, vertical: 16),
+                padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   mainAxisSize: MainAxisSize.max,
@@ -69,15 +68,14 @@ class _HomeScreenState extends State<HomeScreen>
 
                             value: null,
                             hint: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Text(''),
                             ),
 
                             // value: dropdownValue,
                             icon: Padding(
-                              padding: const EdgeInsets.only(right: 18.0),
-                              child: const Icon(
-                                  Icons.keyboard_arrow_down_outlined),
+                              padding: EdgeInsets.only(right: 18.0),
+                              child: Icon(Icons.keyboard_arrow_down_outlined),
                             ),
 
                             // iconSize: 24,
@@ -88,14 +86,14 @@ class _HomeScreenState extends State<HomeScreen>
                               DropdownMenuItem<String>(
                                 value: '1',
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 18.0),
+                                  padding: EdgeInsets.only(left: 18.0),
                                   child: Text('1'),
                                 ),
                               ),
                               DropdownMenuItem<String>(
                                 value: '2',
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 18.0),
+                                  padding: EdgeInsets.only(left: 18.0),
                                   child: Text('2'),
                                 ),
                               )
@@ -123,15 +121,14 @@ class _HomeScreenState extends State<HomeScreen>
 
                           value: null,
                           hint: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text(''),
                           ),
 
                           // value: dropdownValue,
                           icon: Padding(
-                            padding: const EdgeInsets.only(right: 18.0),
-                            child:
-                                const Icon(Icons.keyboard_arrow_down_outlined),
+                            padding: EdgeInsets.only(right: 18.0),
+                            child: Icon(Icons.keyboard_arrow_down_outlined),
                           ),
                           //
                           // iconSize: 24,
@@ -142,14 +139,14 @@ class _HomeScreenState extends State<HomeScreen>
                             DropdownMenuItem<String>(
                               value: '1',
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
+                                padding: EdgeInsets.only(left: 18.0),
                                 child: Text('1'),
                               ),
                             ),
                             DropdownMenuItem<String>(
                               value: '2',
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 18.0),
+                                padding: EdgeInsets.only(left: 18.0),
                                 child: Text('2'),
                               ),
                             )
@@ -165,8 +162,7 @@ class _HomeScreenState extends State<HomeScreen>
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
               child: Container(
                   decoration: BoxDecoration(
                       border: Border(
@@ -187,12 +183,12 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-                left: 8.0, right: 8.0, top: 8.0, bottom: 0.0),
+            padding:
+                EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 0.0),
             child: Container(
               color: appThemeBlue,
               child: Padding(
-                padding: const EdgeInsets.only(
+                padding: EdgeInsets.only(
                     right: 8.0, left: 20.0, top: 4.0, bottom: 4.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -590,7 +586,6 @@ class _HomeScreenState extends State<HomeScreen>
         builder: (context) {
           return AlertDialog(
             contentPadding: EdgeInsets.all(10),
-            insetPadding: EdgeInsets.all(4),
             titlePadding: EdgeInsets.zero,
             title: Container(
                 color: appThemeBlue,

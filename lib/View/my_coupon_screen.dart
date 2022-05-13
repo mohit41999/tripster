@@ -7,7 +7,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class MyCouponScreen extends StatefulWidget {
-  const MyCouponScreen({Key? key}) : super(key: key);
+  MyCouponScreen({Key? key}) : super(key: key);
 
   @override
   State<MyCouponScreen> createState() => _MyCouponScreenState();
@@ -16,6 +16,8 @@ class MyCouponScreen extends StatefulWidget {
 class _MyCouponScreenState extends State<MyCouponScreen> {
   bool paidPick = true;
   bool freePick = false;
+  List<String> dataValues = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  String dropDownValue = '1';
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
             child: Container(
               height: 50,
               decoration: BoxDecoration(
@@ -33,7 +35,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                       topRight: Radius.circular(8.0),
                       topLeft: Radius.circular(8.0))),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   children: [
                     Text(
@@ -49,7 +51,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: Container(
               color: appThemelightBlue,
               child: Column(
@@ -214,17 +216,53 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                           'data:',
                           style: TextStyle(color: Colors.white),
                         ),
+
                         Container(
                           color: Colors.white,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 2),
-                            child: Text(
-                              '1',
-                              style: TextStyle(color: Colors.black),
+                          height: 25,
+                          width: 50,
+                          child: DropdownButton(
+                            isExpanded: true,
+                            isDense: true,
+                            underline: Container(),
+                            dropdownColor: Colors.white,
+                            focusColor: Colors.white,
+                            icon: Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 20,
                             ),
+                            items: dataValues.map((String e) {
+                              return DropdownMenuItem(
+                                value: e,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Text(
+                                    e,
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                            onChanged: (String? v) {
+                              setState(() {
+                                dropDownValue = v!;
+                              });
+                            },
+                            value: dropDownValue,
                           ),
-                        ),
+                        )
+
+                        // Container(
+                        //   color: Colors.white,
+                        //   child: Padding(
+                        //     padding: const EdgeInsets.symmetric(
+                        //         horizontal: 16.0, vertical: 2),
+                        //     child: Text(
+                        //       '1',
+                        //       style: TextStyle(color: Colors.black),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -326,9 +364,12 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                   SizedBox(
                     height: 30,
                   ),
-                  Text(
-                    'Analysis:',
-                    style: TextStyle(color: Colors.white),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Analysis:',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -344,6 +385,9 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                   Center(
                     child: commonBtn(context, MyCouponSavedScreen(),
                         appThemelightPink, Colors.white, 'CREATE PICK', 18, 5),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                 ],
               ),

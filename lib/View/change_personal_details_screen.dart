@@ -6,7 +6,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class ChangePersonalDetailsScreen extends StatefulWidget {
-  const ChangePersonalDetailsScreen({Key? key}) : super(key: key);
+  ChangePersonalDetailsScreen({Key? key}) : super(key: key);
 
   @override
   State<ChangePersonalDetailsScreen> createState() =>
@@ -24,7 +24,7 @@ class _ChangePersonalDetailsScreenState
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -41,7 +41,7 @@ class _ChangePersonalDetailsScreenState
                             topLeft: Radius.circular(8),
                             topRight: Radius.circular(8))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         children: [
                           Text(
@@ -56,8 +56,8 @@ class _ChangePersonalDetailsScreenState
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -76,12 +76,12 @@ class _ChangePersonalDetailsScreenState
                               contentPadding:
                                   EdgeInsets.only(left: 5, right: 5),
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -104,12 +104,12 @@ class _ChangePersonalDetailsScreenState
                               contentPadding:
                                   EdgeInsets.only(left: 5, right: 5),
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -132,12 +132,12 @@ class _ChangePersonalDetailsScreenState
                               contentPadding:
                                   EdgeInsets.only(left: 5, right: 5),
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -176,7 +176,7 @@ class _ChangePersonalDetailsScreenState
                                   fontWeight: FontWeight.bold),
                             ),
                             // Down Arrow Icon
-                            icon: const Icon(Icons.keyboard_arrow_down),
+                            icon: Icon(Icons.keyboard_arrow_down),
 
                             // Array list of items
                             items: [
@@ -228,8 +228,8 @@ class _ChangePersonalDetailsScreenState
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -259,8 +259,8 @@ class _ChangePersonalDetailsScreenState
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -278,17 +278,22 @@ class _ChangePersonalDetailsScreenState
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: appThemelightPink,
-                                  borderRadius: BorderRadius.circular(3)),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 6.0, vertical: 4.0),
-                                child: Text(
-                                  'Cancel',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 16),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: appThemelightPink,
+                                    borderRadius: BorderRadius.circular(3)),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 6.0, vertical: 4.0),
+                                  child: Text(
+                                    'CANCEL',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 16),
+                                  ),
                                 ),
                               ),
                             ),
@@ -305,7 +310,7 @@ class _ChangePersonalDetailsScreenState
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 6.0, vertical: 4.0),
                                   child: Text(
-                                    'Submit',
+                                    'SUBMIT',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16),
                                   ),

@@ -7,7 +7,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class NewPickScreen extends StatefulWidget {
-  const NewPickScreen({Key? key}) : super(key: key);
+  NewPickScreen({Key? key}) : super(key: key);
 
   @override
   State<NewPickScreen> createState() => _NewPickScreenState();
@@ -22,7 +22,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -39,7 +39,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -56,21 +56,20 @@ class _NewPickScreenState extends State<NewPickScreen> {
                     ),
                   ),
                   Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text(
                               'Sport',
                               style: commonstyle,
                             ),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                                 height: 40,
                                 decoration: BoxDecoration(
@@ -86,15 +85,14 @@ class _NewPickScreenState extends State<NewPickScreen> {
 
                                     value: null,
                                     hint: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text('Soccer', style: commonstyle),
                                     ),
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -106,16 +104,14 @@ class _NewPickScreenState extends State<NewPickScreen> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -127,12 +123,11 @@ class _NewPickScreenState extends State<NewPickScreen> {
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('Competition', style: commonstyle),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               width: double.maxFinite,
                               decoration: BoxDecoration(
@@ -140,7 +135,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -157,12 +152,11 @@ class _NewPickScreenState extends State<NewPickScreen> {
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('Event', style: commonstyle),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               width: double.maxFinite,
                               decoration: BoxDecoration(
@@ -170,7 +164,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -186,12 +180,11 @@ class _NewPickScreenState extends State<NewPickScreen> {
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('Market', style: commonstyle),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               width: double.maxFinite,
                               decoration: BoxDecoration(
@@ -199,7 +192,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -216,12 +209,11 @@ class _NewPickScreenState extends State<NewPickScreen> {
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text('Bet', style: commonstyle),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                                 height: 40,
                                 decoration: BoxDecoration(
@@ -237,16 +229,15 @@ class _NewPickScreenState extends State<NewPickScreen> {
 
                                     value: null,
                                     hint: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child:
                                           Text('Pick bet', style: commonstyle),
                                     ),
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -258,8 +249,7 @@ class _NewPickScreenState extends State<NewPickScreen> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),

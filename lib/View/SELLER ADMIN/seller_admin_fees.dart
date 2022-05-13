@@ -7,7 +7,7 @@ import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminFeesEarnings extends StatefulWidget {
-  const SellerAdminFeesEarnings({Key? key}) : super(key: key);
+  SellerAdminFeesEarnings({Key? key}) : super(key: key);
 
   @override
   State<SellerAdminFeesEarnings> createState() =>
@@ -22,7 +22,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -40,7 +40,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -57,8 +57,8 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 16.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -72,7 +72,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -100,7 +100,7 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

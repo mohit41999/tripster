@@ -7,7 +7,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BuyerAdminTransactions extends StatefulWidget {
-  const BuyerAdminTransactions({Key? key}) : super(key: key);
+  BuyerAdminTransactions({Key? key}) : super(key: key);
 
   @override
   State<BuyerAdminTransactions> createState() => _BuyerAdminTransactionsState();
@@ -21,7 +21,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -38,7 +38,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -55,7 +55,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -69,7 +69,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -115,7 +115,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                                   ),
                                   borderRadius: BorderRadius.circular(5)),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Row(
                                   children: [
                                     Expanded(child: Text('')),
@@ -146,7 +146,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                                   ),
                                   borderRadius: BorderRadius.circular(5)),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Row(
                                   children: [
                                     Expanded(child: Text('')),
@@ -169,7 +169,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                                 color: appThemeBlue,
                                 borderRadius: BorderRadius.circular(5)),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 10.0, vertical: 8.0),
                               child: Text(
                                 'Show',
@@ -183,14 +183,14 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Container(
                       height: 60,
                       decoration: BoxDecoration(
                         color: appThemeBlue,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -208,7 +208,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -253,7 +253,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                                   fontWeight: FontWeight.bold),
                             ),
                             // Down Arrow Icon
-                            icon: const Icon(Icons.keyboard_arrow_down),
+                            icon: Icon(Icons.keyboard_arrow_down),
 
                             // Array list of items
                             items: [
@@ -335,7 +335,7 @@ class _BuyerAdminTransactionsState extends State<BuyerAdminTransactions> {
                                   fontWeight: FontWeight.bold),
                             ),
                             // Down Arrow Icon
-                            icon: const Icon(Icons.keyboard_arrow_down),
+                            icon: Icon(Icons.keyboard_arrow_down),
 
                             // Array list of items
                             items: [

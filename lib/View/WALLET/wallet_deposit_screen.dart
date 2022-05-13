@@ -7,13 +7,15 @@ import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletDepositScreen extends StatefulWidget {
-  const WalletDepositScreen({Key? key}) : super(key: key);
+  WalletDepositScreen({Key? key}) : super(key: key);
 
   @override
   State<WalletDepositScreen> createState() => _WalletDepositScreenState();
 }
 
 class _WalletDepositScreenState extends State<WalletDepositScreen> {
+  bool acknowledgeBool = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +23,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -38,7 +40,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -62,7 +64,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Container(
                       color: Colors.white,
                       child: Column(
@@ -79,7 +81,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                                 borderRadius: BorderRadius.circular(5),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
+                                padding: EdgeInsets.symmetric(
                                     horizontal: 16.0, vertical: 8.0),
                                 child: Row(
                                   mainAxisAlignment:
@@ -116,15 +118,16 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                           Container(
                             height: 50,
                             child: TextField(
+                              keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 fillColor: Colors.white,
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                         color: Colors.grey, width: 1.0),
                                     borderRadius: BorderRadius.circular(7)),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: appThemeBlue, width: 1.0),
                                   borderRadius: BorderRadius.circular(7),
                                 ),
@@ -138,7 +141,7 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(top: 16.0),
+                                padding: EdgeInsets.only(top: 16.0),
                                 child: Text(
                                   'Payment method:',
                                   style: TextStyle(
@@ -211,7 +214,17 @@ class _WalletDepositScreenState extends State<WalletDepositScreen> {
                           ),
                           Row(
                             children: [
-                              Checkbox(value: false, onChanged: (v) {}),
+                              Checkbox(
+                                value: acknowledgeBool,
+                                activeColor: appThemeBlue,
+                                onChanged: (v) {
+                                  setState(() {
+                                    acknowledgeBool = v!;
+                                  });
+                                },
+                                fillColor:
+                                    MaterialStateProperty.all(appThemeBlue),
+                              ),
                               Expanded(
                                 child: Text(
                                     'I acknowledge that I read and agree with the wallet Rules'),

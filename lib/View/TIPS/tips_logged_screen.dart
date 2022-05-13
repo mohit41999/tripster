@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Combo/combo_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Paid/paid_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Public/public_pick.dart';
 import 'package:tipster/constants/widgets/TipsWidgets/tips_widgets.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonWidgets.dart';
@@ -6,7 +9,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class TipsLoggedInScreen extends StatefulWidget {
-  const TipsLoggedInScreen({Key? key}) : super(key: key);
+  TipsLoggedInScreen({Key? key}) : super(key: key);
 
   @override
   State<TipsLoggedInScreen> createState() => _TipsLoggedInScreenState();
@@ -40,12 +43,12 @@ class _TipsLoggedInScreenState extends State<TipsLoggedInScreen>
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: Container(
               height: 40,
               color: appThemeBlue,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -79,7 +82,7 @@ class _TipsLoggedInScreenState extends State<TipsLoggedInScreen>
 }
 
 class MyTipsScreen extends StatelessWidget {
-  const MyTipsScreen({
+  MyTipsScreen({
     Key? key,
   }) : super(key: key);
 
@@ -91,16 +94,17 @@ class MyTipsScreen extends StatelessWidget {
           return (index + 1 == 10)
               ? CommonBottomWidget()
               : Padding(
-                  padding:
-                      const EdgeInsets.only(left: 8.0, bottom: 8.0, right: 8.0),
-                  child: (index % 3 == 0) ? TipsWidget() : TipsWidgetPaid(),
+                  padding: EdgeInsets.only(left: 8.0, bottom: 8.0, right: 8.0),
+                  child: PublicPickWidget(
+                    isFollowing: true,
+                  ),
                 );
         });
   }
 }
 
 class AllTipsScreen extends StatelessWidget {
-  const AllTipsScreen({
+  AllTipsScreen({
     Key? key,
   }) : super(key: key);
 
@@ -109,16 +113,23 @@ class AllTipsScreen extends StatelessWidget {
     return ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
-          return (index + 1 == 10)
+          return (index + 1 == 20)
               ? CommonBottomWidget()
               : Padding(
-                  padding:
-                      const EdgeInsets.only(left: 8.0, bottom: 8.0, right: 8.0),
+                  padding: EdgeInsets.only(left: 8.0, bottom: 8.0, right: 8.0),
                   child: (index % 3 == 0)
-                      ? TipsWidgetWithFollow()
-                      : (index % 5 == 0)
-                          ? TipsWidgetComboPick()
-                          : TipsWidgetPaidWithFollow(),
+                      ? PublicPickWidget(
+                          isFollowing: false,
+                        )
+                      :
+                      // (index % 5 == 0)
+                      //         ? ComboPick(
+                      //             isFollowing: false,
+                      //           )
+                      //         :
+                      PaidPickWidget(
+                          isFollowing: false,
+                        ),
                 );
         });
   }

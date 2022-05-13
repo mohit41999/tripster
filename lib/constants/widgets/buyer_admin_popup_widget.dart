@@ -21,7 +21,7 @@ Future buyerAdminDialog(BuildContext context) async {
               color: appThemeBlue,
               child: Center(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'BUYER ADMIN',
                   style: TextStyle(color: Colors.white),
@@ -43,7 +43,7 @@ Future buyerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(10.0),
                         child: Text('SUBSCRIPTIONS'),
                       )))),
               Divider(
@@ -62,7 +62,7 @@ Future buyerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(10.0),
                         child: Text('TRANSACTIONS'),
                       )))),
             ],

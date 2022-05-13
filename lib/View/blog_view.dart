@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Graded/graded_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Paid/paid_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgets/Public/public_pick.dart';
 import 'package:tipster/constants/widgets/TipsWidgets/tips_widgets.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonWidgets.dart';
@@ -11,7 +14,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BlogView extends StatefulWidget {
-  const BlogView({Key? key}) : super(key: key);
+  BlogView({Key? key}) : super(key: key);
 
   @override
   State<BlogView> createState() => _BlogViewState();
@@ -106,8 +109,7 @@ class _BlogViewState extends State<BlogView> {
           Container(
             color: Colors.white,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -151,7 +153,7 @@ class _BlogViewState extends State<BlogView> {
             height: 5,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
@@ -218,7 +220,7 @@ class _BlogViewState extends State<BlogView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
@@ -250,7 +252,7 @@ class _BlogViewState extends State<BlogView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '66%\n WON',
+                        '66%\n FOOTBALL',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: appThemeteal,
@@ -261,7 +263,10 @@ class _BlogViewState extends State<BlogView> {
                         width: 200,
                         height: 200,
                         child: SfCircularChart(
-                            palette: [appThemelightPink, appThemeteal],
+                            palette: [
+                              Color(0xff095199),
+                              appThemelightPink,
+                            ],
                             borderWidth: double.minPositive,
                             series: <CircularSeries>[
                               // Render pie chart
@@ -272,7 +277,7 @@ class _BlogViewState extends State<BlogView> {
                                   yValueMapper: (ChartData data, _) => data.y),
                             ]),
                       ),
-                      Text('33%\n LOST',
+                      Text('33%\n TENNIS',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: appThemelightPink,
@@ -285,7 +290,7 @@ class _BlogViewState extends State<BlogView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
@@ -314,8 +319,8 @@ class _BlogViewState extends State<BlogView> {
                   height: 200,
                   color: Colors.white,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 8),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
                     child: Container(
                         child: Center(
                             child: Container(
@@ -354,14 +359,14 @@ class _BlogViewState extends State<BlogView> {
           ),
           Container(),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
                   height: 40,
                   decoration: BoxDecoration(color: appThemeBlue),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -380,23 +385,25 @@ class _BlogViewState extends State<BlogView> {
                     ),
                   ),
                 ),
-                TipsWidget(),
+                PublicPickWidget(isFollowing: true),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-            child: TipsWidgetPaid(),
+            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+            child: PaidPickWidget(
+              isFollowing: true,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
                   height: 40,
                   decoration: BoxDecoration(color: appThemeBlue),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -415,18 +422,33 @@ class _BlogViewState extends State<BlogView> {
                     ),
                   ),
                 ),
-                TipsWidgetWithFollow(),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: GradedPick(grade: 'Won'),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: GradedPick(grade: 'Lost'),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: GradedPick(grade: 'Pushed'),
+                ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-            child: TipsWidgetWithFollowEditAnnalysis(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-            child: TipsWidgetPaidWithFollow(),
-          ),
+          // Padding(
+          //   padding:  EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+          //   child: PublicPickAnalysisWidget(
+          //     isFollowing: true,
+          //   ),
+          // ),
+          // Padding(
+          //   padding:  EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+          //   child: PaidPickWidget(
+          //     isFollowing: true,
+          //   ),
+          // ),
           SizedBox(
             height: 10,
           ),
@@ -436,8 +458,7 @@ class _BlogViewState extends State<BlogView> {
                     color: appThemeBlue,
                     borderRadius: BorderRadius.circular(5)),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
+                  padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
                   child: Text(
                     'See Older',
                     style: TextStyle(color: Colors.white),
@@ -448,7 +469,7 @@ class _BlogViewState extends State<BlogView> {
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               children: [
                 Container(
@@ -476,8 +497,8 @@ class _BlogViewState extends State<BlogView> {
                 Container(
                   color: Colors.white,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10.0),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 20, horizontal: 10.0),
                     child: Text(
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
                   ),

@@ -7,7 +7,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class PublishNewPickScreen extends StatefulWidget {
-  const PublishNewPickScreen({Key? key}) : super(key: key);
+  PublishNewPickScreen({Key? key}) : super(key: key);
 
   @override
   State<PublishNewPickScreen> createState() => _PublishNewPickScreenState();
@@ -21,7 +21,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -38,7 +38,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -55,7 +55,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -70,7 +70,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                             width: double.maxFinite,
                             color: appThemelightPink.withOpacity(0.15),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 'Bet365',
@@ -93,7 +93,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                           child: Container(
                             width: double.maxFinite,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 'Pinnacle',
@@ -114,7 +114,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                           child: Container(
                             width: double.maxFinite,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 'WilliamHill',
@@ -135,7 +135,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                           child: Container(
                             width: double.maxFinite,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 '1XBet',
@@ -156,7 +156,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                           child: Container(
                             width: double.maxFinite,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 'BetClick',
@@ -177,7 +177,7 @@ class _PublishNewPickScreenState extends State<PublishNewPickScreen> {
                           child: Container(
                             width: double.maxFinite,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 16.0),
                               child: Text(
                                 'SBObet',

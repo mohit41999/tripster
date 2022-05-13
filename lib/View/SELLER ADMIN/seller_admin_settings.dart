@@ -9,7 +9,7 @@ import 'package:tipster/utils/colors.dart';
 import '../../constants/widgets/commonAppBar.dart';
 
 class SellerAdminSettings extends StatefulWidget {
-  const SellerAdminSettings({Key? key}) : super(key: key);
+  SellerAdminSettings({Key? key}) : super(key: key);
 
   @override
   State<SellerAdminSettings> createState() => _SellerAdminSettingsState();
@@ -43,8 +43,8 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                     )),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 10),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
                     child: Column(
                       children: [
                         Text(
@@ -63,7 +63,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                             Expanded(
                               flex: 2,
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                                padding: EdgeInsets.only(left: 8.0),
                                 child: Text('Price',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -92,7 +92,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                             Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Container(
                                     height: 35,
                                     child: Row(
@@ -100,6 +100,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       children: [
                                         Expanded(
                                           child: TextField(
+                                            style: TextStyle(fontSize: 15),
                                             keyboardType: TextInputType.number,
                                             controller: subscriptionController,
                                             onChanged: (v) {
@@ -114,15 +115,17 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                             },
                                             decoration: InputDecoration(
                                               fillColor: Colors.white,
+                                              contentPadding:
+                                                  EdgeInsets.only(left: 10),
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                       color: Color(0xffC4C4C4),
                                                       width: 1.0),
                                                   borderRadius:
                                                       BorderRadius.circular(2)),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                     color: appThemeBlue,
                                                     width: 1.0),
                                                 borderRadius:
@@ -142,8 +145,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                               color: Color(0xffE1E1E1),
                                             ),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 '\€',
                                                 style: TextStyle(
@@ -173,7 +175,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                             Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Container(
                                     height: 35,
                                     child: Row(
@@ -181,8 +183,11 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       children: [
                                         Expanded(
                                           child: TextField(
+                                            style: TextStyle(fontSize: 15),
                                             readOnly: true,
                                             decoration: InputDecoration(
+                                              contentPadding:
+                                                  EdgeInsets.only(left: 10),
                                               fillColor: Color(0xffE1E1E1),
                                               filled: true,
                                               hintText: ThirtyPercent,
@@ -190,13 +195,13 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                                   color: Color(0xff494949),
                                                   fontSize: 12),
                                               enabledBorder: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                       color: Color(0xffC4C4C4),
                                                       width: 1.0),
                                                   borderRadius:
                                                       BorderRadius.circular(2)),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                     color: appThemeBlue,
                                                     width: 1.0),
                                                 borderRadius:
@@ -216,8 +221,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                               color: Color(0xffE1E1E1),
                                             ),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 '\€',
                                                 style: TextStyle(
@@ -248,7 +252,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                             Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Container(
                                     height: 35,
                                     child: Row(
@@ -256,12 +260,15 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       children: [
                                         Expanded(
                                           child: TextField(
+                                            style: TextStyle(fontSize: 15),
                                             readOnly: true,
                                             decoration: InputDecoration(
+                                              contentPadding:
+                                                  EdgeInsets.only(left: 10),
                                               fillColor: Color(0xffE1E1E1),
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                       color: Color(0xffC4C4C4),
                                                       width: 1.0),
                                                   borderRadius:
@@ -271,7 +278,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                                   color: Color(0xff494949),
                                                   fontSize: 12),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                     color: appThemeBlue,
                                                     width: 1.0),
                                                 borderRadius:
@@ -291,8 +298,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                               color: Color(0xffE1E1E1),
                                             ),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 '\€',
                                                 style: TextStyle(
@@ -332,7 +338,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                     color: appThemelightPink,
                                     borderRadius: BorderRadius.circular(3)),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                  padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5.0),
                                   child: Text(
                                     'CANCEL',
@@ -357,7 +363,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                     color: appThemeteal,
                                     borderRadius: BorderRadius.circular(3)),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                  padding: EdgeInsets.symmetric(
                                       horizontal: 10.0, vertical: 5.0),
                                   child: Text(
                                     'SUBMIT',
@@ -400,8 +406,8 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                           color: appThemelightPink,
                           borderRadius: BorderRadius.circular(3)),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5.0),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 5.0),
                         child: Text(
                           'CANCEL',
                           style: TextStyle(fontSize: 12, color: Colors.white),
@@ -421,7 +427,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                           color: appThemeteal,
                           borderRadius: BorderRadius.circular(3)),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             horizontal: 10.0, vertical: 5.0),
                         child: Text(
                           'SUBMIT',
@@ -462,7 +468,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                         color: Color(0xffEAEAEA),
                         width: double.maxFinite,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: Text(
                             'B /',
@@ -471,7 +477,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                           ),
                         )),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: TextField(
                         maxLines: 7,
                         decoration: InputDecoration(
@@ -481,12 +487,12 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                           hintStyle:
                               TextStyle(color: Color(0xff828080), fontSize: 15),
                           enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.grey, width: 1.0),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1.0),
                               borderRadius: BorderRadius.circular(2)),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: appThemeBlue, width: 1.0),
+                            borderSide:
+                                BorderSide(color: appThemeBlue, width: 1.0),
                             borderRadius: BorderRadius.circular(2),
                           ),
                         ),
@@ -507,7 +513,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -524,7 +530,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -541,7 +547,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -555,7 +561,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -608,7 +614,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       color: appThemelightPink,
                                       borderRadius: BorderRadius.circular(5)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                    padding: EdgeInsets.symmetric(
                                         horizontal: 10.0, vertical: 8.0),
                                     child: Text(
                                       'CHANGE',
@@ -653,7 +659,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       color: appThemelightPink,
                                       borderRadius: BorderRadius.circular(5)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                    padding: EdgeInsets.symmetric(
                                         horizontal: 10.0, vertical: 8.0),
                                     child: Text(
                                       'CHANGE',
@@ -701,7 +707,7 @@ class _SellerAdminSettingsState extends State<SellerAdminSettings> {
                                       color: appThemelightPink,
                                       borderRadius: BorderRadius.circular(5)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                    padding: EdgeInsets.symmetric(
                                         horizontal: 10.0, vertical: 8.0),
                                     child: Text(
                                       'CHANGE',

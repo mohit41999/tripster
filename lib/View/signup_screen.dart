@@ -10,7 +10,7 @@ import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -24,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: commonSignUpAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0),
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.close,
                           color: appThemeBlue,
@@ -62,7 +62,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.close,
                           color: Colors.white,
@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 commonSizedbox(),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  padding: EdgeInsets.symmetric(horizontal: 30.0),
                   child: Column(
                     children: [
                       Column(
@@ -111,12 +111,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           horizontal: 4, vertical: 6),
                                       filled: true,
                                       enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                               color: Colors.grey, width: 1.0),
                                           borderRadius:
                                               BorderRadius.circular(7)),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                             color: appThemeBlue, width: 1.0),
                                         borderRadius: BorderRadius.circular(7),
                                       ),
@@ -172,12 +172,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           horizontal: 4, vertical: 6),
                                       filled: true,
                                       enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                               color: Colors.grey, width: 1.0),
                                           borderRadius:
                                               BorderRadius.circular(7)),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                             color: appThemeBlue, width: 1.0),
                                         borderRadius: BorderRadius.circular(7),
                                       ),
@@ -198,31 +198,50 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: appThemeBlue,
-                            child: Icon(FontAwesomeIcons.google,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: appThemeBlue,
-                            child: Icon(
-                              FontAwesomeIcons.facebookF,
-                              color: Colors.white,
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: appThemeBlue),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(
+                                FontAwesomeIcons.google,
+                                color: Colors.white,
+                                size: 40,
+                              ),
                             ),
                           ),
                           SizedBox(
                             width: 10,
                           ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: appThemeBlue,
-                            child: Icon(FontAwesomeIcons.apple,
-                                color: Colors.white),
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: appThemeBlue),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(
+                                FontAwesomeIcons.facebookF,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: appThemeBlue),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(
+                                FontAwesomeIcons.apple,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
                           ),
                         ],
                       ),
@@ -262,7 +281,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             color: Colors.grey, width: 1.0),
                                         borderRadius: BorderRadius.circular(7)),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                           color: appThemeBlue, width: 1.0),
                                       borderRadius: BorderRadius.circular(7),
                                     ),
@@ -297,7 +316,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             color: Colors.grey, width: 1.0),
                                         borderRadius: BorderRadius.circular(7)),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                           color: appThemeBlue, width: 1.0),
                                       borderRadius: BorderRadius.circular(7),
                                     ),
@@ -332,7 +351,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             color: Colors.grey, width: 1.0),
                                         borderRadius: BorderRadius.circular(7)),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                           color: appThemeBlue, width: 1.0),
                                       borderRadius: BorderRadius.circular(7),
                                     ),
@@ -373,7 +392,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           color: Color(0xffFD5A77)),
                     )),
                 commonSizedbox(),
-                Text('Already have an account?'),
+                Text('Already have an account?',
+                    style: TextStyle(
+                      fontSize: 12,
+                    )),
                 GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -384,10 +406,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Text(
                       'Sign In',
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 12,
                           decoration: TextDecoration.underline,
                           color: Color(0xffFD5A77)),
                     )),
+                SizedBox(
+                  height: 20,
+                )
               ],
             ),
           ),

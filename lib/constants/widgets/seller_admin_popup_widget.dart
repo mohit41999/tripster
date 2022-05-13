@@ -19,7 +19,7 @@ Future sellerAdminDialog(BuildContext context) async {
               color: appThemeBlue,
               child: Center(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'SELLER ADMIN',
                   style: TextStyle(color: Colors.white),
@@ -40,7 +40,7 @@ Future sellerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       color: Colors.transparent,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Center(child: Text('SETTINGS')),
                       ))),
               Divider(
@@ -58,7 +58,7 @@ Future sellerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       color: Colors.transparent,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Center(child: Text('EARNINGS')),
                       ))),
               Divider(
@@ -76,7 +76,7 @@ Future sellerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       color: Colors.transparent,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Center(child: Text('SUBSCRIBERS')),
                       ))),
               Divider(
@@ -94,7 +94,7 @@ Future sellerAdminDialog(BuildContext context) async {
                       width: double.maxFinite,
                       color: Colors.transparent,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Center(child: Text('FEES & EARNINGS')),
                       ))),
             ],

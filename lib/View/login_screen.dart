@@ -9,7 +9,7 @@ import 'package:tipster/constants/widgets/signUpAppBar.dart';
 import 'package:tipster/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: commonSignUpAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.close,
                           color: appThemeBlue,
@@ -61,12 +61,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.close,
-                          color: Colors.white,
-                          size: 35,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 35,
+                          ),
                         ),
                       )
                     ],
@@ -77,29 +82,50 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: appThemeBlue,
-                      child: Icon(FontAwesomeIcons.google, color: Colors.white),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: appThemeBlue,
-                      child: Icon(
-                        FontAwesomeIcons.facebookF,
-                        color: Colors.white,
+                    Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: appThemeBlue),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          FontAwesomeIcons.google,
+                          color: Colors.white,
+                          size: 40,
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: 10,
                     ),
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: appThemeBlue,
-                      child: Icon(FontAwesomeIcons.apple, color: Colors.white),
+                    Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: appThemeBlue),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          FontAwesomeIcons.facebookF,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: appThemeBlue),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          FontAwesomeIcons.apple,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
                     ),
                   ],
                 ),
@@ -110,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     children: [
                       Column(
@@ -136,11 +162,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 contentPadding: EdgeInsets.symmetric(
                                     horizontal: 4, vertical: 6),
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                         color: Colors.grey, width: 1.0),
                                     borderRadius: BorderRadius.circular(7)),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: appThemeBlue, width: 1.0),
                                   borderRadius: BorderRadius.circular(7),
                                 ),
@@ -173,11 +199,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                     horizontal: 4, vertical: 6),
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                         color: Colors.grey, width: 1.0),
                                     borderRadius: BorderRadius.circular(7)),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: appThemeBlue, width: 1.0),
                                   borderRadius: BorderRadius.circular(7),
                                 ),

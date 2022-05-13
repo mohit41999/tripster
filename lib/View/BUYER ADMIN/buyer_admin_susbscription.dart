@@ -1,14 +1,12 @@
 import 'package:flag/flag.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_transactions.dart';
 import 'package:tipster/constants/widgets/buyer_admin_popup_widget.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BuyerAdminSubscriptions extends StatefulWidget {
-  const BuyerAdminSubscriptions({Key? key}) : super(key: key);
+  BuyerAdminSubscriptions({Key? key}) : super(key: key);
 
   @override
   State<BuyerAdminSubscriptions> createState() =>
@@ -26,7 +24,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -43,7 +41,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,7 +58,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -74,7 +72,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -104,7 +102,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Filter by status',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 16),
@@ -130,9 +128,8 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -144,16 +141,14 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -191,9 +186,8 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -205,16 +199,14 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -249,15 +241,14 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                                     isExpanded: true,
                                     value: null,
                                     hint: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text('Plan start'),
                                     ),
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -269,16 +260,14 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -298,14 +287,14 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
+                    padding: EdgeInsets.only(bottom: 20.0),
                     child: Material(
                       elevation: 2.0,
                       child: Column(
@@ -432,7 +421,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text(
                                         'CANCEL SUBSCRIPTION',
                                         style: TextStyle(
@@ -467,13 +456,12 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
         builder: (context) {
           return AlertDialog(
             contentPadding: EdgeInsets.all(10),
-            insetPadding: EdgeInsets.all(4),
             titlePadding: EdgeInsets.zero,
             title: Container(
                 color: appThemeBlue,
                 child: Center(
                     child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'UNSUBSCRIBE',
                     style: TextStyle(color: Colors.white),
@@ -499,7 +487,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                         Navigator.pop(context);
                       },
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'CANCEL',
                           style: TextStyle(fontSize: 12),
@@ -520,7 +508,7 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
                         confirmSubscriptionDialog(context);
                       },
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'CONFIRM',
                           style: TextStyle(fontSize: 12),
@@ -544,13 +532,12 @@ class _BuyerAdminSubscriptionsState extends State<BuyerAdminSubscriptions> {
         builder: (context) {
           return AlertDialog(
             contentPadding: EdgeInsets.all(10),
-            insetPadding: EdgeInsets.all(4),
             titlePadding: EdgeInsets.zero,
             title: Container(
                 color: appThemeBlue,
                 child: Center(
                     child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'SUBSCRIPTION CANCELLED',
                     style: TextStyle(color: Colors.white),

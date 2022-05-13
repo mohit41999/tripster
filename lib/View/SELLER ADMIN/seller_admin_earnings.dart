@@ -6,7 +6,7 @@ import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminEarnings extends StatefulWidget {
-  const SellerAdminEarnings({Key? key}) : super(key: key);
+  SellerAdminEarnings({Key? key}) : super(key: key);
 
   @override
   State<SellerAdminEarnings> createState() => _SellerAdminEarningsState();
@@ -20,7 +20,7 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -37,7 +37,7 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -54,7 +54,7 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -68,7 +68,7 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -121,15 +121,14 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
 
                                       value: null,
                                       hint: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Text('Last 6 months'),
                                       ),
 
                                       // value: dropdownValue,
                                       icon: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 18.0),
-                                        child: const Icon(
+                                        padding: EdgeInsets.only(right: 18.0),
+                                        child: Icon(
                                             Icons.keyboard_arrow_down_outlined),
                                       ),
 
@@ -141,16 +140,16 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
                                         DropdownMenuItem<String>(
                                           value: '1',
                                           child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 18.0),
+                                            padding:
+                                                EdgeInsets.only(left: 18.0),
                                             child: Text('1'),
                                           ),
                                         ),
                                         DropdownMenuItem<String>(
                                           value: '2',
                                           child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 18.0),
+                                            padding:
+                                                EdgeInsets.only(left: 18.0),
                                             child: Text('2'),
                                           ),
                                         )
@@ -174,7 +173,7 @@ class _SellerAdminEarningsState extends State<SellerAdminEarnings> {
                           height: 10,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
+                          padding: EdgeInsets.only(left: 20.0),
                           child: Text(
                             'All-time',
                             style: TextStyle(

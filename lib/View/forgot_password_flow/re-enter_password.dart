@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tipster/utils/colors.dart';
 
 class ReEnterPassword extends StatefulWidget {
-  const ReEnterPassword({Key? key}) : super(key: key);
+  ReEnterPassword({Key? key}) : super(key: key);
 
   @override
   State<ReEnterPassword> createState() => _ReEnterPasswordState();
@@ -14,7 +14,7 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Container(
           height: MediaQuery.of(context).size.height / 3,
           decoration: BoxDecoration(
@@ -45,7 +45,7 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     Column(
@@ -63,12 +63,12 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -80,7 +80,7 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     Column(
@@ -98,12 +98,12 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -115,7 +115,7 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 20),
+                padding: EdgeInsets.only(bottom: 20),
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {},

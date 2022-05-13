@@ -16,7 +16,7 @@ Future walletDialog(BuildContext context) async {
               color: appThemeBlue,
               child: Center(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'WALLET',
                   style: TextStyle(color: Colors.white),
@@ -38,7 +38,7 @@ Future walletDialog(BuildContext context) async {
                       width: double.maxFinite,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        padding: EdgeInsets.symmetric(vertical: 16.0),
                         child: Text('HISTORY'),
                       )))),
               Divider(
@@ -57,7 +57,7 @@ Future walletDialog(BuildContext context) async {
                       width: double.maxFinite,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        padding: EdgeInsets.symmetric(vertical: 16.0),
                         child: Text('DEPOSIT'),
                       )))),
               Divider(
@@ -76,7 +76,7 @@ Future walletDialog(BuildContext context) async {
                       width: double.maxFinite,
                       child: Center(
                           child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        padding: EdgeInsets.symmetric(vertical: 16.0),
                         child: Text('WITHDRAW'),
                       )))),
             ],

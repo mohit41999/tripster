@@ -6,7 +6,7 @@ import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletHistoryScreen extends StatefulWidget {
-  const WalletHistoryScreen({Key? key}) : super(key: key);
+  WalletHistoryScreen({Key? key}) : super(key: key);
 
   @override
   State<WalletHistoryScreen> createState() => _WalletHistoryScreenState();
@@ -20,7 +20,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -37,7 +37,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -61,7 +61,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -76,7 +76,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisAlignment:
@@ -124,7 +124,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                         ),
                                         borderRadius: BorderRadius.circular(5)),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
                                           Expanded(child: Text('')),
@@ -157,7 +157,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                         ),
                                         borderRadius: BorderRadius.circular(5)),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
                                           Expanded(child: Text('')),
@@ -196,7 +196,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                         ),
                                         borderRadius: BorderRadius.circular(5)),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
                                           Expanded(child: Text('')),
@@ -229,7 +229,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                         ),
                                         borderRadius: BorderRadius.circular(5)),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
                                           Expanded(child: Text('')),
@@ -256,7 +256,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                   color: appThemelightPink,
                                   borderRadius: BorderRadius.circular(8)),
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
+                                padding: EdgeInsets.symmetric(
                                     horizontal: 10.0, vertical: 8.0),
                                 child: Text(
                                   'Clear',
@@ -276,7 +276,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                       color: appThemeBlue,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -293,7 +293,7 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

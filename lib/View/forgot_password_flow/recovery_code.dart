@@ -3,7 +3,7 @@ import 'package:tipster/View/forgot_password_flow/re-enter_password.dart';
 import 'package:tipster/utils/colors.dart';
 
 class RecoveryCode extends StatefulWidget {
-  const RecoveryCode({Key? key}) : super(key: key);
+  RecoveryCode({Key? key}) : super(key: key);
 
   @override
   State<RecoveryCode> createState() => _RecoveryCodeState();
@@ -15,7 +15,7 @@ class _RecoveryCodeState extends State<RecoveryCode> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Container(
           height: MediaQuery.of(context).size.height / 3,
           decoration: BoxDecoration(
@@ -46,14 +46,14 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'A recovery code wast sent to your email',
                   textAlign: TextAlign.left,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     Column(
@@ -71,12 +71,12 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -88,7 +88,7 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 20),
+                padding: EdgeInsets.only(bottom: 20),
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {

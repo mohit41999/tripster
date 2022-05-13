@@ -4,12 +4,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tipster/utils/colors.dart';
 
 class CommonBottomWidget extends StatelessWidget {
-  const CommonBottomWidget({Key? key}) : super(key: key);
+  CommonBottomWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
+      padding: EdgeInsets.only(top: 16.0),
       child: Container(
         color: Colors.white,
         child: Column(
@@ -29,34 +29,49 @@ class CommonBottomWidget extends StatelessWidget {
               height: 30,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  child: Icon(
-                    FontAwesomeIcons.instagram,
-                    color: Colors.white,
-                    size: 50,
+                Container(
+                  decoration: BoxDecoration(
+                      color: appThemeBlue, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Icon(
+                      FontAwesomeIcons.instagram,
+                      color: Colors.white,
+                      size: 40,
+                    ),
                   ),
-                  backgroundColor: appThemeBlue,
-                  radius: 40,
                 ),
-                CircleAvatar(
-                  child: Icon(
-                    FontAwesomeIcons.facebookF,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  backgroundColor: appThemeBlue,
-                  radius: 40,
+                SizedBox(
+                  width: 30,
                 ),
-                CircleAvatar(
-                  child: Icon(
-                    FontAwesomeIcons.twitter,
-                    color: Colors.white,
-                    size: 40,
+                Container(
+                  decoration: BoxDecoration(
+                      color: appThemeBlue, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Icon(
+                      FontAwesomeIcons.facebookF,
+                      color: Colors.white,
+                      size: 40,
+                    ),
                   ),
-                  backgroundColor: appThemeBlue,
-                  radius: 40,
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: appThemeBlue, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Icon(
+                      FontAwesomeIcons.twitter,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ),
                 ),
               ],
             ),

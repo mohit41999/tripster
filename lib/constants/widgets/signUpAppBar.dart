@@ -52,7 +52,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
               (listOfMoreMenu.indexOf(element) + 1 == listOfMoreMenu.length)
                   ? SizedBox()
                   : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Divider(
                         color: Colors.white,
                         height: 0,
@@ -93,7 +93,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
         child: Container(
           height: double.maxFinite,
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 10),
+            padding: EdgeInsets.only(left: 20.0, right: 10),
             child: Icon(
               Icons.menu,
               size: 40,
@@ -111,13 +111,13 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                 MaterialPageRoute(builder: (context) => LoginScreen()));
           },
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(color: Colors.white, width: 2)),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Center(child: Text('LOGIN')),
                 )),
           ),
@@ -128,14 +128,14 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                 MaterialPageRoute(builder: (context) => SignUpScreen()));
           },
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
                 decoration: BoxDecoration(
                   color: appThemelightPink,
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Center(child: Text('SIGNUP')),
                 )),
           ),

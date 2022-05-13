@@ -6,13 +6,14 @@ import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class WalletWithdrawScreen extends StatefulWidget {
-  const WalletWithdrawScreen({Key? key}) : super(key: key);
+  WalletWithdrawScreen({Key? key}) : super(key: key);
 
   @override
   State<WalletWithdrawScreen> createState() => _WalletWithdrawScreenState();
 }
 
 class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
+  bool acknowledgeBool = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -37,7 +38,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -61,7 +62,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -76,7 +77,7 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisAlignment:
@@ -113,16 +114,17 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                         Container(
                           height: 50,
                           child: TextField(
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -134,10 +136,13 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Choose account:',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            Padding(
+                              padding: EdgeInsets.only(top: 16.0),
+                              child: Text(
+                                'Choose account:',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
                             ),
                             SizedBox(
                               width: 20,
@@ -189,7 +194,17 @@ class _WalletWithdrawScreenState extends State<WalletWithdrawScreen> {
                         ),
                         Row(
                           children: [
-                            Checkbox(value: false, onChanged: (v) {}),
+                            Checkbox(
+                              value: acknowledgeBool,
+                              activeColor: appThemeBlue,
+                              onChanged: (v) {
+                                setState(() {
+                                  acknowledgeBool = v!;
+                                });
+                              },
+                              fillColor:
+                                  MaterialStateProperty.all(appThemeBlue),
+                            ),
                             Expanded(
                               child: Text(
                                   'I acknowledge that I read and agree with the wallet Rules'),

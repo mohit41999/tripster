@@ -5,7 +5,7 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  SettingsScreen({Key? key}) : super(key: key);
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
@@ -19,7 +19,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -36,7 +36,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             topLeft: Radius.circular(8),
                             topRight: Radius.circular(8))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         children: [
                           Text(
@@ -51,8 +51,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 8.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -73,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           children: [
                             Container(
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Text(
                                   'Choose file',
                                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -90,7 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Expanded(
                               child: Container(
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                  padding: EdgeInsets.symmetric(
                                       vertical: 2.0, horizontal: 16),
                                   child: Text(
                                     'profile pic.jpg',
@@ -123,12 +123,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -158,9 +158,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -171,16 +171,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -211,9 +209,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -224,16 +222,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -264,9 +260,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -277,16 +273,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -308,7 +302,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fillColor: Colors.grey.withOpacity(0.2),
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               labelText: 'EUR \'\€\'',
@@ -316,8 +310,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               floatingLabelBehavior:
                                   FloatingLabelBehavior.never,
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -342,12 +336,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   FloatingLabelBehavior.never,
                               hintText: 'test@gmail.com',
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -374,12 +368,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -399,12 +393,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -424,12 +418,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fillColor: Colors.white,
                               filled: true,
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
                                   borderRadius: BorderRadius.circular(7)),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: appThemeBlue, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: appThemeBlue, width: 1.0),
                                 borderRadius: BorderRadius.circular(7),
                               ),
                             ),
@@ -440,13 +434,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                         Center(
                           child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          WalletHistoryScreen()));
-                            },
+                            onPressed: () {},
                             child: Text('Update'),
                             style: ButtonStyle(
                                 backgroundColor:

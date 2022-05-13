@@ -9,7 +9,7 @@ import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class SellerAdminSubscribers extends StatefulWidget {
-  const SellerAdminSubscribers({Key? key}) : super(key: key);
+  SellerAdminSubscribers({Key? key}) : super(key: key);
 
   @override
   State<SellerAdminSubscribers> createState() => _SellerAdminSubscribersState();
@@ -26,7 +26,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -43,7 +43,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                             topRight: Radius.circular(8.0),
                             topLeft: Radius.circular(8.0))),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,7 +60,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -74,7 +74,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -127,15 +127,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
 
                                     value: null,
                                     hint: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text('Last 6 months'),
                                     ),
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -147,16 +146,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -194,15 +191,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
 
                                     value: null,
                                     hint: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text('Active'),
                                     ),
 
                                     // value: dropdownValue,
                                     icon: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 18.0),
-                                      child: const Icon(
+                                      padding: EdgeInsets.only(right: 18.0),
+                                      child: Icon(
                                           Icons.keyboard_arrow_down_outlined),
                                     ),
 
@@ -214,16 +210,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                                       DropdownMenuItem<String>(
                                         value: '1',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('1'),
                                         ),
                                       ),
                                       DropdownMenuItem<String>(
                                         value: '2',
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 18.0),
+                                          padding: EdgeInsets.only(left: 18.0),
                                           child: Text('2'),
                                         ),
                                       )
@@ -258,15 +252,15 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
 
                                 value: null,
                                 hint: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Text('Paid'),
                                 ),
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -277,16 +271,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -319,15 +311,15 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
 
                                 value: null,
                                 hint: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Text('30 Days'),
                                 ),
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -338,16 +330,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -380,15 +370,15 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
 
                                 value: null,
                                 hint: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Text('Plan start'),
                                 ),
 
                                 // value: dropdownValue,
                                 icon: Padding(
-                                  padding: const EdgeInsets.only(right: 18.0),
-                                  child: const Icon(
-                                      Icons.keyboard_arrow_down_outlined),
+                                  padding: EdgeInsets.only(right: 18.0),
+                                  child:
+                                      Icon(Icons.keyboard_arrow_down_outlined),
                                 ),
 
                                 // iconSize: 24,
@@ -399,16 +389,14 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
                                   DropdownMenuItem<String>(
                                     value: '1',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('1'),
                                     ),
                                   ),
                                   DropdownMenuItem<String>(
                                     value: '2',
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 18.0),
+                                      padding: EdgeInsets.only(left: 18.0),
                                       child: Text('2'),
                                     ),
                                   )
@@ -431,8 +419,7 @@ class _SellerAdminSubscribersState extends State<SellerAdminSubscribers> {
               itemCount: 1,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(
-                      left: 8.0, right: 8.0, bottom: 10.0),
+                  padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 10.0),
                   child: Material(
                     elevation: 2.0,
                     child: Column(
