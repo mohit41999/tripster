@@ -297,30 +297,215 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Deposit 25.00'),
+                        RichText(
+                          text: TextSpan(
+                              text: 'Deposit ',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '25.00\€',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                        ),
                         Text('WID:6c9413a3ee046418b70059b1b34c7038'),
                         Text('Skrill Transaction ID: 444555666'),
-                        Text('Market Fee'),
+                        Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          width: double.infinity,
+                          child: DropdownButton<String>(
+                            onChanged: (newValue) {},
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+
+                            dropdownColor: Colors.white,
+
+                            isExpanded: true,
+
+                            // Initial Value
+                            hint: Text(
+                              '',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            // Down Arrow Icon
+                            icon: Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: [
+                              DropdownMenuItem(
+                                value: '1',
+                                child: Text(
+                                  'Completed',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '2',
+                                child: Text(
+                                  'Pending',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '3',
+                                child: Text(
+                                  'Cancelled',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '4',
+                                child: Text(
+                                  'Refunded',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                            ],
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+
+                            value: '1',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                              text: 'Market Fee ',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: '5.00\€',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                        ),
                         Text('WID:6c9413a3ee046418b70059b1b34c7038'),
+                        Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          width: double.infinity,
+                          child: DropdownButton<String>(
+                            onChanged: (newValue) {},
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+
+                            dropdownColor: Colors.white,
+
+                            isExpanded: true,
+
+                            // Initial Value
+                            hint: Text(
+                              '',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            // Down Arrow Icon
+                            icon: Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: [
+                              DropdownMenuItem(
+                                value: '1',
+                                child: Text(
+                                  'Completed',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '2',
+                                child: Text(
+                                  'Pending',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '3',
+                                child: Text(
+                                  'Cancelled',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: '4',
+                                child: Text(
+                                  'Refunded',
+                                  style: TextStyle(color: appThemeteal),
+                                ),
+                              ),
+                            ],
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+
+                            value: '1',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded(child: Text('Date')),
-                            Expanded(child: Text('29 Dec 2021, 16:34')),
+                            Expanded(
+                                child: Text(
+                              'Date',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )),
+                            Expanded(
+                                child: Text(
+                              '29 Dec 2021, 16:34',
+                              textAlign: TextAlign.end,
+                            )),
+                            SizedBox(
+                              width: 20,
+                            ),
                           ],
                         ),
                         Divider(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded(flex: 2, child: Text('Amount')),
-                            Expanded(child: Text('-25')),
+                            Expanded(
+                                child: Text('Amount',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold))),
+                            Expanded(
+                              child: Text(
+                                '-25.00\€',
+                                style: TextStyle(
+                                    color: appThemelightPink,
+                                    fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.end,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
                           ],
                         ),
                         Divider(),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
