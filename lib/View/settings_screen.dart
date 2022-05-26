@@ -122,6 +122,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             decoration: InputDecoration(
                               fillColor: Colors.white,
                               filled: true,
+                              contentPadding: EdgeInsets.only(left: 8),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),

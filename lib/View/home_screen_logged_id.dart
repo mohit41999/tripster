@@ -270,7 +270,11 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              BlogView()));
+                                                              BlogView(
+                                                                isLoggedin:
+                                                                    true,
+                                                                isUser: false,
+                                                              )));
                                                 },
                                                 child: Container(
                                                   color: Colors.transparent,
@@ -730,7 +734,11 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              BlogView()));
+                                                              BlogView(
+                                                                isLoggedin:
+                                                                    true,
+                                                                isUser: false,
+                                                              )));
                                                 },
                                                 child: Container(
                                                   color: Colors.transparent,
@@ -1003,6 +1011,97 @@ class _HomeScreenLogInState extends State<HomeScreenLogIn>
                                                               fontSize: 12,
                                                             ))),
                                                   )),
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 4.0,
+                                                        vertical: 10.0),
+                                                child: Divider(
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding: const EdgeInsets
+                                                              .symmetric(
+                                                          horizontal: 8.0),
+                                                      child: Container(
+                                                        height: 30,
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color:
+                                                                    appThemeBlue),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4)),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(Icons
+                                                                .person_add_alt_1_outlined),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Text('FOLLOWING')
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: GestureDetector(
+                                                      onTap: () {
+                                                        confirmPurchaseDialog(
+                                                            context);
+                                                      },
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                horizontal:
+                                                                    8.0),
+                                                        child: Container(
+                                                          height: 30,
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  appThemeBlue,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4)),
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .add_shopping_cart,
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 5,
+                                                              ),
+                                                              Text(
+                                                                '55\€/MONTH',
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white),
+                                                              )
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                               SizedBox(

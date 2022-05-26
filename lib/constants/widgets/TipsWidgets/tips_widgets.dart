@@ -115,7 +115,7 @@ import 'package:tipster/utils/colors.dart';
 //                 SizedBox(
 //                   height: 10,
 //                 ),
-//                 Text('Over 1.5(Match Goals) @ 1.667'),
+//                 Text('Over 1.5 (Match Goals) @ 1.667'),
 //                 SizedBox(
 //                   height: 10,
 //                 ),
@@ -457,10 +457,3 @@ import 'package:tipster/utils/colors.dart';
 //     );
 //   }
 // }
-
-
-
-
-
-
-

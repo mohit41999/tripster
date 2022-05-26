@@ -13,6 +13,66 @@ class WalletHistoryScreen extends StatefulWidget {
 }
 
 class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
+  DateTime fromDate = DateTime.now();
+  DateTime toDate = DateTime.now();
+
+  Future<void> _selectfromDate(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: fromDate,
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2050),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: appThemeBlue, // <-- SEE HERE
+              // <-- SEE HERE
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                  // button text color
+                  ),
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
+    if (pickedDate != null && pickedDate != fromDate)
+      setState(() {
+        fromDate = pickedDate;
+      });
+  }
+
+  Future<void> _selecttoDate(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: toDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2050),
+        builder: (context, child) {
+          return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: ColorScheme.light(
+                primary: appThemeBlue, // <-- SEE HERE
+                // <-- SEE HERE
+              ),
+              textButtonTheme: TextButtonThemeData(
+                style: TextButton.styleFrom(
+                    // button text color
+                    ),
+              ),
+            ),
+            child: child!,
+          );
+        });
+    if (pickedDate != null && pickedDate != toDate)
+      setState(() {
+        toDate = pickedDate;
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,8 +187,16 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                       padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
-                                          Expanded(child: Text('')),
-                                          Icon(Icons.calendar_today_outlined)
+                                          Expanded(
+                                              child: Text(fromDate
+                                                  .toString()
+                                                  .substring(0, 10))),
+                                          GestureDetector(
+                                              onTap: () {
+                                                _selectfromDate(context);
+                                              },
+                                              child: Icon(Icons
+                                                  .calendar_today_outlined))
                                         ],
                                       ),
                                     ),
@@ -160,8 +228,16 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                       padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
-                                          Expanded(child: Text('')),
-                                          Icon(Icons.calendar_today_outlined)
+                                          Expanded(
+                                              child: Text(toDate
+                                                  .toString()
+                                                  .substring(0, 10))),
+                                          GestureDetector(
+                                              onTap: () {
+                                                _selectfromDate(context);
+                                              },
+                                              child: Icon(Icons
+                                                  .calendar_today_outlined))
                                         ],
                                       ),
                                     ),

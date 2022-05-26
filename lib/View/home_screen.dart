@@ -236,8 +236,10 @@ class _HomeScreenState extends State<HomeScreen>
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  BlogView()));
+                                              builder: (context) => BlogView(
+                                                    isLoggedin: false,
+                                                    isUser: false,
+                                                  )));
                                     },
                                     child: Container(
                                       color: Colors.transparent,
@@ -574,7 +576,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ],
                 );
               }),
-          CommonBottomWidget()
+          CommonBottomWidget(),
         ],
       ),
     );

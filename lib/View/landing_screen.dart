@@ -128,7 +128,7 @@ class openPickWidget extends StatelessWidget {
                               size: 20,
                             ),
                             Text(
-                              '55\$/MONTH',
+                              '55\€/MONTH',
                               style:
                                   TextStyle(fontSize: 12, color: Colors.white),
                             )
@@ -153,7 +153,7 @@ class openPickWidget extends StatelessWidget {
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text('Over 1.5(Match Goals) @ 1.667'),
+                    Text('Over 1.5 (Match Goals) @ 1.667'),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -357,7 +357,7 @@ class paidPickWidget extends StatelessWidget {
                               size: 20,
                             ),
                             Text(
-                              '55\$/MONTH',
+                              '55\€/MONTH',
                               style:
                                   TextStyle(fontSize: 12, color: Colors.white),
                             )

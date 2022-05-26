@@ -108,7 +108,7 @@ class PaidPickWidget extends StatelessWidget {
                             size: 20,
                           ),
                           Text(
-                            '55\$/MONTH',
+                            '55\€/MONTH',
                             style: TextStyle(fontSize: 12, color: Colors.white),
                           )
                         ],

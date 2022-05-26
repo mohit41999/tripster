@@ -109,7 +109,7 @@ class PublicPickWidget extends StatelessWidget {
                             size: 20,
                           ),
                           Text(
-                            '55\$/MONTH',
+                            '55\€/MONTH',
                             style: TextStyle(fontSize: 12, color: Colors.white),
                           )
                         ],
@@ -163,7 +163,7 @@ class PublicPickWidget extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text('Over 1.5(Match Goals) @ 1.667'),
+                Text('Over 1.5 (Match Goals) @ 1.667'),
                 SizedBox(
                   height: 10,
                 ),
@@ -283,7 +283,7 @@ class PublicPickWidget extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.3),
                   width: double.infinity,
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                           child: TextField(
@@ -446,7 +446,7 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                             size: 20,
                           ),
                           Text(
-                            '55\$/MONTH',
+                            '55\€/MONTH',
                             style: TextStyle(fontSize: 12, color: Colors.white),
                           )
                         ],
@@ -500,7 +500,7 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text('Over 1.5(Match Goals) @ 1.667'),
+                Text('Over 1.5 (Match Goals) @ 1.667'),
                 SizedBox(
                   height: 10,
                 ),
@@ -620,7 +620,7 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.3),
                   width: double.infinity,
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                           child: TextField(

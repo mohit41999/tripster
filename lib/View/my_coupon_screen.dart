@@ -22,6 +22,7 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: commonAppBar(),
       body: ListView(
         children: [
@@ -222,10 +223,11 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                           height: 25,
                           width: 50,
                           child: DropdownButton(
-                            isExpanded: true,
-                            isDense: true,
+                            enableFeedback: false,
+                            alignment: AlignmentDirectional.topStart,
                             underline: Container(),
                             dropdownColor: Colors.white,
+                            isDense: true,
                             focusColor: Colors.white,
                             icon: Icon(
                               Icons.keyboard_arrow_down,

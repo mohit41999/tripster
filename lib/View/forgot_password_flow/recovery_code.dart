@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tipster/View/forgot_password_flow/re-enter_password.dart';
 import 'package:tipster/utils/colors.dart';
 
+import '../../constants/widgets/signUpAppBar.dart';
+
 class RecoveryCode extends StatefulWidget {
   RecoveryCode({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class _RecoveryCodeState extends State<RecoveryCode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonSignUpAppBar(),
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Container(
@@ -63,6 +65,9 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                           'Enter recovery code:',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Container(
                           height: 30,

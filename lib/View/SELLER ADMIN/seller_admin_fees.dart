@@ -112,8 +112,14 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                           height: 20,
                         ),
                         Text(
-                            'By enrolling as Seller in the Webname Market, you certify that you are 18 years of age or older and that you have read and accept the the following Fees and Earnings Terms. '
-                            'Webname reserves the right, at its sole discretion, to alter these terms at any time. It is your responsibility to check them periodically for any changes. Your continued use of Webname Market following such revisions will constitute your acceptance of the changed Fees and Earnings Terms. If you do not agree with the revised terms, do not continue to use Webname Market.'),
+                          'By enrolling as Seller in the Webname Market, you certify that you are 18 years of age or older and that you have read and accept the the following Fees and Earnings Terms. '
+                          'Webname reserves the right, at its sole discretion, to alter these terms at any time'
+                          '. It is your responsibility to check them periodically for any changes. '
+                          'Your continued use of Webname Market following such revisions will constitut'
+                          'e your acceptance of the changed Fees and Earnings Terms. If you do not agree'
+                          ' with the revised terms, do not continue to use Webname Market.',
+                          textAlign: TextAlign.justify,
+                        ),
                         SizedBox(
                           height: 20,
                         ),
@@ -131,7 +137,9 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('1.  '),
                             Expanded(
                               child: Text(
-                                  'Sellers are charged a 4.5% payment processing fee for each Buyer subscription. It is shown as "Taxes" in the Monthly Statement in your Seller Admin. This fee is to cover the charges paid by Blogabet to different payment processors for clients’ deposits.'),
+                                'Sellers are charged a 4.5% payment processing fee for each Buyer subscription. It is shown as "Taxes" in the Monthly Statement in your Seller Admin. This fee is to cover the charges paid by Blogabet to different payment processors for clients’ deposits.',
+                                textAlign: TextAlign.justify,
+                              ),
                             ),
                           ],
                         ),
@@ -142,7 +150,8 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('2.  '),
                             Expanded(
                               child: Text(
-                                  'Sellers are charged a sliding Blogabet Market fee, based on the volume of the NET revenue* from subscriptions per calendar month. The higher the volume, the lower fee you will be charged.'),
+                                  'Sellers are charged a sliding Blogabet Market fee, based on the volume of the NET revenue* from subscriptions per calendar month. The higher the volume, the lower fee you will be charged.',
+                                  textAlign: TextAlign.justify),
                             ),
                           ],
                         ),
@@ -153,7 +162,8 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('3.  '),
                             Expanded(
                               child: Text(
-                                  'A minimum monthly Market fee of 10 EUR is due for every calendar month when a Seller has been active and published one or more paid picks. If the Seller did not have sales and earnings during the month, the 10 EUR fee will be deducted automatically from his Blogabet wallet at the start of the next month. In case the Seller\'s wallet balance becomes negative, his Market account will be temporary suspended pending payment of the due balance.'),
+                                  'A minimum monthly Market fee of 10 EUR is due for every calendar month when a Seller has been active and published one or more paid picks. If the Seller did not have sales and earnings during the month, the 10 EUR fee will be deducted automatically from his Blogabet wallet at the start of the next month. In case the Seller\'s wallet balance becomes negative, his Market account will be temporary suspended pending payment of the due balance.',
+                                  textAlign: TextAlign.justify),
                             ),
                           ],
                         ),
@@ -207,7 +217,9 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('2.  '),
                             Expanded(
                               child: Text(
-                                  'To estimate when payout will be scheduled, visit the Earnings Tab of the Seller Admin. Hovering over the (?) icon next to the On Hold status in the monthly statement, the expected DUE date will be displayed.'),
+                                'To estimate when payout will be scheduled, visit the Earnings Tab of the Seller Admin. Hovering over the (?) icon next to the On Hold status in the monthly statement, the expected DUE date will be displayed.',
+                                textAlign: TextAlign.justify,
+                              ),
                             ),
                           ],
                         ),
@@ -221,7 +233,9 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('3.  '),
                             Expanded(
                               child: Text(
-                                  'Earnings will be credited to the Seller\'s Wallet within 1-2 working days after the monthly status turns to DUE.'),
+                                'Earnings will be credited to the Seller\'s Wallet within 1-2 working days after the monthly status turns to DUE.',
+                                textAlign: TextAlign.justify,
+                              ),
                             ),
                           ],
                         ),
@@ -235,7 +249,9 @@ class _SellerAdminFeesEarningsState extends State<SellerAdminFeesEarnings> {
                             Text('4.  '),
                             Expanded(
                               child: Text(
-                                  'The amount due for payment is calculated as the total revenue received from subscriptions minus the market fee, payment processing taxes, refunds and refund fees if any.'),
+                                'The amount due for payment is calculated as the total revenue received from subscriptions minus the market fee, payment processing taxes, refunds and refund fees if any.',
+                                textAlign: TextAlign.justify,
+                              ),
                             ),
                           ],
                         ),

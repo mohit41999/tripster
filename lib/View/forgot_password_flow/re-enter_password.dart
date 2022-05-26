@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tipster/utils/colors.dart';
 
+import '../../constants/widgets/signUpAppBar.dart';
+
 class ReEnterPassword extends StatefulWidget {
   ReEnterPassword({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonSignUpAppBar(),
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Container(
@@ -56,6 +58,9 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Container(
                           height: 30,
                           child: TextField(
@@ -90,6 +95,9 @@ class _ReEnterPasswordState extends State<ReEnterPassword> {
                           'Confirm new password:',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Container(
                           height: 30,

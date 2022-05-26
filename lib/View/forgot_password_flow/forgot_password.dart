@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tipster/View/forgot_password_flow/recovery_code.dart';
 import 'package:tipster/utils/colors.dart';
 
+import '../../constants/widgets/signUpAppBar.dart';
+
 class ForgotPassword extends StatefulWidget {
   ForgotPassword({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: commonSignUpAppBar(),
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Container(
@@ -63,6 +65,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           'Enter your e-mail address:',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Container(
                           height: 30,

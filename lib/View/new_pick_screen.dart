@@ -15,6 +15,7 @@ class NewPickScreen extends StatefulWidget {
 
 class _NewPickScreenState extends State<NewPickScreen> {
   TextStyle commonstyle = TextStyle(fontSize: 18);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,21 +130,47 @@ class _NewPickScreenState extends State<NewPickScreen> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
-                              width: double.maxFinite,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('UEFA Champions League',
-                                        style: commonstyle),
-                                    Icon(Icons.search)
-                                  ],
+                              height: 40,
+                              child: TextFormField(
+                                // autovalidateMode: AutovalidateMode.onUserInteraction,
+                                // validator: validator,
+                                // maxLength: maxLength,
+                                // maxLengthEnforcement: MaxLengthEnforcement.enforced,
+
+                                decoration: InputDecoration(
+                                  enabled: true,
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.black,
+                                  ),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.never,
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 2),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  border: new OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color: Colors.transparent)),
+                                  // enabledBorder: InputBorder.none,
+                                  // errorBorder: InputBorder.none,
+                                  // disabledBorder: InputBorder.none,
+                                  filled: true,
+                                  labelText: 'UEFA Champion League',
+
+                                  labelStyle: TextStyle(color: Colors.black),
+                                  hintText: "UEFA Champion League",
+                                  hintStyle: TextStyle(color: Colors.black),
+                                  fillColor: Colors.white,
                                 ),
                               ),
                             ),
@@ -158,20 +185,47 @@ class _NewPickScreenState extends State<NewPickScreen> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
-                              width: double.maxFinite,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('Pick event', style: commonstyle),
-                                    Icon(Icons.search)
-                                  ],
+                              height: 40,
+                              child: TextFormField(
+                                // autovalidateMode: AutovalidateMode.onUserInteraction,
+                                // validator: validator,
+                                // maxLength: maxLength,
+                                // maxLengthEnforcement: MaxLengthEnforcement.enforced,
+
+                                decoration: InputDecoration(
+                                  enabled: true,
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.black,
+                                  ),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.never,
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 2),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  border: new OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color: Colors.transparent)),
+                                  // enabledBorder: InputBorder.none,
+                                  // errorBorder: InputBorder.none,
+                                  // disabledBorder: InputBorder.none,
+                                  filled: true,
+                                  labelText: 'Pick Event',
+
+                                  labelStyle: TextStyle(color: Colors.black),
+                                  hintText: "Pick Event",
+                                  hintStyle: TextStyle(color: Colors.black),
+                                  fillColor: Colors.white,
                                 ),
                               ),
                             ),
@@ -186,21 +240,47 @@ class _NewPickScreenState extends State<NewPickScreen> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
-                              width: double.maxFinite,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('Total corners FT',
-                                        style: commonstyle),
-                                    Icon(Icons.search)
-                                  ],
+                              height: 40,
+                              child: TextFormField(
+                                // autovalidateMode: AutovalidateMode.onUserInteraction,
+                                // validator: validator,
+                                // maxLength: maxLength,
+                                // maxLengthEnforcement: MaxLengthEnforcement.enforced,
+
+                                decoration: InputDecoration(
+                                  enabled: true,
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.black,
+                                  ),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.never,
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 2),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color:
+                                              Colors.black.withOpacity(0.5))),
+                                  border: new OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: new BorderSide(
+                                          color: Colors.transparent)),
+                                  // enabledBorder: InputBorder.none,
+                                  // errorBorder: InputBorder.none,
+                                  // disabledBorder: InputBorder.none,
+                                  filled: true,
+                                  labelText: 'Total corners FT',
+
+                                  labelStyle: TextStyle(color: Colors.black),
+                                  hintText: "Total corners FT",
+                                  hintStyle: TextStyle(color: Colors.black),
+                                  fillColor: Colors.white,
                                 ),
                               ),
                             ),

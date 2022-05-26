@@ -141,7 +141,12 @@ class _commonAppBarState extends State<commonAppBar> {
     switch (index) {
       case 0:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => BlogView()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => BlogView(
+                      isLoggedin: true,
+                      isUser: true,
+                    )));
         break;
       case 1:
         Navigator.push(context,

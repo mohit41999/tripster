@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_susbscription.dart';
+import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
+import 'package:tipster/View/login_screen.dart';
 import 'package:tipster/constants/widgets/TipsWidgets/Graded/graded_pick.dart';
 import 'package:tipster/constants/widgets/TipsWidgets/Paid/paid_pick.dart';
 import 'package:tipster/constants/widgets/TipsWidgets/Public/public_pick.dart';
@@ -14,7 +17,10 @@ import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BlogView extends StatefulWidget {
-  BlogView({Key? key}) : super(key: key);
+  final bool isLoggedin;
+  final bool isUser;
+  BlogView({Key? key, required this.isLoggedin, required this.isUser})
+      : super(key: key);
 
   @override
   State<BlogView> createState() => _BlogViewState();
@@ -26,6 +32,11 @@ class _BlogViewState extends State<BlogView> {
     final List<ChartData> chartData = [
       ChartData('loss', 33.33, appThemelightPink),
       ChartData('Profit', 66.66, appThemeteal),
+    ];
+
+    final List<ChartData> chartData1 = [
+      ChartData('soccer', 33.33, appThemelightPink),
+      ChartData('baseball', 66.66, appThemeteal),
     ];
 
     return Scaffold(
@@ -113,37 +124,68 @@ class _BlogViewState extends State<BlogView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    width: 120,
-                    height: 35,
-                    decoration: BoxDecoration(
-                        color: appThemeBlue,
-                        borderRadius: BorderRadius.circular(4)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          Icons.shopping_cart,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          '55\$/MONTH',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                      if (widget.isLoggedin) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WalletDepositScreen()));
+                      } else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
+                      }
+                    },
+                    child: Container(
+                      width: 120,
+                      height: 35,
+                      decoration: BoxDecoration(
+                          color: appThemeBlue,
+                          borderRadius: BorderRadius.circular(4)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            Icons.shopping_cart,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          Text(
+                            '55\€/MONTH',
+                            style: TextStyle(fontSize: 12, color: Colors.white),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  Container(
-                    width: 120,
-                    height: 35,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [Icon(Icons.person_add_alt), Text('FOLLOW')],
+                  GestureDetector(
+                    onTap: () {
+                      if (widget.isLoggedin) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    BuyerAdminSubscriptions()));
+                      } else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
+                      }
+                    },
+                    child: Container(
+                      width: 120,
+                      height: 35,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [Icon(Icons.person_add_alt), Text('FOLLOW')],
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: appThemeBlue),
+                          borderRadius: BorderRadius.circular(4)),
                     ),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: appThemeBlue),
-                        borderRadius: BorderRadius.circular(4)),
                   ),
                 ],
               ),
@@ -251,38 +293,40 @@ class _BlogViewState extends State<BlogView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        '66%\n FOOTBALL',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: appThemeteal,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14),
-                      ),
+                      // Text(
+                      //   '66%\n FOOTBALL',
+                      //   textAlign: TextAlign.center,
+                      //   style: TextStyle(
+                      //       color: appThemeteal,
+                      //       fontWeight: FontWeight.bold,
+                      //       fontSize: 14),
+                      // ),
                       Container(
-                        width: 200,
                         height: 200,
                         child: SfCircularChart(
                             palette: [
                               Color(0xff095199),
-                              appThemelightPink,
+                              Color(0xff0b65bf),
                             ],
                             borderWidth: double.minPositive,
+                            legend: Legend(
+                                isVisible: true,
+                                textStyle: TextStyle(color: Colors.grey)),
                             series: <CircularSeries>[
                               // Render pie chart
                               DoughnutSeries<ChartData, String>(
-                                  dataSource: chartData,
+                                  dataSource: chartData1,
                                   radius: '85',
                                   xValueMapper: (ChartData data, _) => data.x,
                                   yValueMapper: (ChartData data, _) => data.y),
                             ]),
                       ),
-                      Text('33%\n TENNIS',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: appThemelightPink,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14)),
+                      // Text('33%\n TENNIS',
+                      //     textAlign: TextAlign.center,
+                      //     style: TextStyle(
+                      //         color: appThemelightPink,
+                      //         fontWeight: FontWeight.bold,
+                      //         fontSize: 14)),
                     ],
                   ),
                 ),
@@ -434,6 +478,12 @@ class _BlogViewState extends State<BlogView> {
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: GradedPick(grade: 'Pushed'),
                 ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: PublicPickAnalysisWidget(
+                    isFollowing: true,
+                  ),
+                ),
               ],
             ),
           ),
@@ -515,6 +565,7 @@ class _BlogViewState extends State<BlogView> {
 
 class ChartData {
   ChartData(this.x, this.y, this.color);
+
   final String x;
   final double y;
   final Color color;
@@ -522,6 +573,7 @@ class ChartData {
 
 class SalesData {
   SalesData(this.year, this.sales);
+
   final String year;
   final double sales;
 }

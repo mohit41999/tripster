@@ -118,7 +118,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                     border: Border.all(color: Colors.white, width: 2)),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Center(child: Text('LOGIN')),
+                  child: Center(child: Text('LOG IN')),
                 )),
           ),
         ),
@@ -136,7 +136,7 @@ class _commonSignUpAppBarState extends State<commonSignUpAppBar> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Center(child: Text('SIGNUP')),
+                  child: Center(child: Text('SIGN UP')),
                 )),
           ),
         ),
