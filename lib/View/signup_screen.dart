@@ -88,7 +88,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: [
                           RichText(
                             text: TextSpan(
-                                text: 'Sub Domain ',
+                                text: 'Subdomain ',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
