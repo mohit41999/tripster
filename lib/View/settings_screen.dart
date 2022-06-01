@@ -302,6 +302,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             decoration: InputDecoration(
                               fillColor: Colors.grey.withOpacity(0.2),
                               filled: true,
+                              contentPadding: EdgeInsets.only(left: 8),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
@@ -332,6 +333,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             decoration: InputDecoration(
                               fillColor: Colors.grey.withOpacity(0.2),
                               filled: true,
+                              contentPadding: EdgeInsets.only(left: 8),
                               labelText: 'test@gmail.com',
                               floatingLabelBehavior:
                                   FloatingLabelBehavior.never,
@@ -367,6 +369,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           child: TextField(
                             decoration: InputDecoration(
                               fillColor: Colors.white,
+                              contentPadding: EdgeInsets.only(left: 8),
                               filled: true,
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -393,6 +396,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             decoration: InputDecoration(
                               fillColor: Colors.white,
                               filled: true,
+                              contentPadding: EdgeInsets.only(left: 8),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),
@@ -418,6 +422,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             decoration: InputDecoration(
                               fillColor: Colors.white,
                               filled: true,
+                              contentPadding: EdgeInsets.only(left: 8),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.grey, width: 1.0),

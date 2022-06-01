@@ -383,7 +383,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }),
                     Expanded(
                         child: Text(
-                      'I agree with the Terms&Conditions and Privacy Policy',
+                      'I agree with the Terms&Conditions and Privacy Policy  ',
                       style: TextStyle(fontSize: 12),
                     ))
                   ],

@@ -1,6 +1,7 @@
 import 'package:flag/flags_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
@@ -19,6 +20,7 @@ import 'package:tipster/utils/colors.dart';
 class BlogView extends StatefulWidget {
   final bool isLoggedin;
   final bool isUser;
+
   BlogView({Key? key, required this.isLoggedin, required this.isUser})
       : super(key: key);
 
@@ -127,10 +129,15 @@ class _BlogViewState extends State<BlogView> {
                   GestureDetector(
                     onTap: () {
                       if (widget.isLoggedin) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => WalletDepositScreen()));
+                        showPopup();
+                        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        //     content: Text(
+                        //         "you will subscribe and therespective amount will be deducted from youraccount")));
+
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => WalletDepositScreen()));
                       } else {
                         Navigator.push(
                             context,
@@ -180,7 +187,13 @@ class _BlogViewState extends State<BlogView> {
                       height: 35,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [Icon(Icons.person_add_alt), Text('FOLLOW')],
+                        children: [
+                          Icon(Icons.person_add_alt),
+                          Text(
+                            'FOLLOW',
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
                       ),
                       decoration: BoxDecoration(
                           border: Border.all(color: appThemeBlue),
@@ -560,6 +573,169 @@ class _BlogViewState extends State<BlogView> {
         ],
       ),
     );
+  }
+
+  Future showPopup() async {
+    return showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (context) {
+          return StatefulBuilder(builder: (context, setState) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AlertDialog(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                contentPadding: EdgeInsets.zero,
+                insetPadding: EdgeInsets.zero,
+
+                // To display the title it is optional
+                content: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        color: appThemeBlue,
+                        child: Center(
+                          child: Text(
+                            'DEPOSIT',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 16, bottom: 16, left: 8, right: 8),
+                        child: Text(
+                          "your balance is not enough. you need to deposit before purchasing",
+                          style: TextStyle(color: Colors.red, fontSize: 12),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Current Balance:'),
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                                height: 40, child: Center(child: Text('15€'))),
+                          ))
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Deposit Amount(EUR):'),
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                                height: 40,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    fillColor: Colors.white,
+                                    filled: true,
+                                    contentPadding: EdgeInsets.only(left: 4),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.grey, width: 1.0),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: appThemeBlue, width: 1.0),
+                                      borderRadius: BorderRadius.circular(7),
+                                    ),
+                                  ),
+                                )),
+                          ))
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Text('Payment method:'),
+                          ),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Radio(
+                                        value: '1',
+                                        groupValue: '1',
+                                        onChanged: (v) {}),
+                                    Text(
+                                      'Card',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Radio(
+                                        value: '1',
+                                        groupValue: '1',
+                                        onChanged: (v) {}),
+                                    Text(
+                                      'Paypal',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Radio(
+                                        value: '1',
+                                        groupValue: '1',
+                                        onChanged: (v) {}),
+                                    Text(
+                                      'Skirll',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Checkbox(
+                            value: false,
+                            onChanged: (v) {},
+                          ),
+                          Expanded(
+                            child: Text(
+                                "i knowladge that i read and agree with the Wallwet Rulles"),
+                          )
+                        ],
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Deposit'),
+                      )
+                    ],
+                  ),
+                ),
+                // Message which will be pop up on the screen
+                // Action widget which will provide the user to acknowledge the choice
+              ),
+            );
+          });
+        });
   }
 }
 

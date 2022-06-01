@@ -6,6 +6,7 @@ import 'package:tipster/utils/colors.dart';
 
 class PublicPickWidget extends StatelessWidget {
   final bool isFollowing;
+
   const PublicPickWidget({
     Key? key,
     required this.isFollowing,
@@ -28,11 +29,11 @@ class PublicPickWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage:
-                          AssetImage('assets/images/profile_picture.png'),
-                    ),
+                    // CircleAvatar(
+                    //   radius: 35,
+                    //   backgroundImage:
+                    //       AssetImage('assets/images/profile_picture.png'),
+                    // ),
                     SizedBox(
                       width: 5,
                     ),
@@ -58,15 +59,15 @@ class PublicPickWidget extends StatelessWidget {
                           SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            children: [
-                              commonFlag(),
-                              SizedBox(
-                                width: 3,
-                              ),
-                              Text('+14% (253)'),
-                            ],
-                          ),
+                          // Row(
+                          //   children: [
+                          //     commonFlag(),
+                          //     SizedBox(
+                          //       width: 3,
+                          //     ),
+                          //     Text('+14% (253)'),
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),
@@ -343,6 +344,7 @@ class PublicPickWidget extends StatelessWidget {
 
 class PublicPickAnalysisWidget extends StatelessWidget {
   final bool isFollowing;
+
   const PublicPickAnalysisWidget({
     Key? key,
     required this.isFollowing,
