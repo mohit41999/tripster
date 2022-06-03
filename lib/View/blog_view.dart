@@ -1,20 +1,15 @@
-import 'package:flag/flags_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_susbscription.dart';
-import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
 import 'package:tipster/View/login_screen.dart';
-import 'package:tipster/constants/widgets/TipsWidgets/Graded/graded_pick.dart';
-import 'package:tipster/constants/widgets/TipsWidgets/Paid/paid_pick.dart';
-import 'package:tipster/constants/widgets/TipsWidgets/Public/public_pick.dart';
-import 'package:tipster/constants/widgets/TipsWidgets/tips_widgets.dart';
+import 'package:tipster/constants/widgets/TipsWidgetsForBlogView/Graded/graded_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgetsForBlogView/Paid/paid_pick.dart';
+import 'package:tipster/constants/widgets/TipsWidgetsForBlogView/Public/public_pick.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonWidgets.dart';
 import 'package:tipster/constants/widgets/common_bottom_widget.dart';
+import 'package:tipster/constants/widgets/seller_admin_popup_widget.dart';
 import 'package:tipster/utils/colors.dart';
 
 class BlogView extends StatefulWidget {
@@ -234,40 +229,47 @@ class _BlogViewState extends State<BlogView> {
                   ),
                 ),
                 Container(
-                  height: 200,
+                  height: 250,
                   color: Colors.white,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        '66%\n WON',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: appThemeteal,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14),
-                      ),
                       Container(
-                        width: 200,
-                        height: 200,
                         child: SfCircularChart(
                             palette: [appThemelightPink, appThemeteal],
                             borderWidth: double.minPositive,
+                            title: ChartTitle(
+                                text: 'Values are in Percentage %',
+                                textStyle: TextStyle(
+                                    color: Colors.grey, fontSize: 12)),
+                            legend: Legend(
+                                isVisible: true,
+                                isResponsive: true,
+                                overflowMode: LegendItemOverflowMode.wrap,
+                                position: LegendPosition.bottom),
                             series: <CircularSeries>[
                               // Render pie chart
                               DoughnutSeries<ChartData, String>(
                                   dataSource: chartData,
                                   radius: '85',
-                                  xValueMapper: (ChartData data, _) => data.x,
-                                  yValueMapper: (ChartData data, _) => data.y),
+                                  xValueMapper: (ChartData data, _) {
+                                    return data.x;
+                                  },
+                                  yValueMapper: (ChartData data, _) {
+                                    return data.y;
+                                  },
+                                  dataLabelSettings: DataLabelSettings(
+                                      isVisible: true,
+                                      showCumulativeValues: true,
+                                      overflowMode: OverflowMode.shift,
+                                      labelPosition:
+                                          ChartDataLabelPosition.outside,
+                                      labelAlignment:
+                                          ChartDataLabelAlignment.bottom,
+                                      textStyle:
+                                          TextStyle(color: Colors.grey))),
                             ]),
                       ),
-                      Text('33%\n LOST',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: appThemelightPink,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14)),
                     ],
                   ),
                 ),
@@ -301,46 +303,38 @@ class _BlogViewState extends State<BlogView> {
                   ),
                 ),
                 Container(
-                  height: 200,
+                  height: 250,
                   color: Colors.white,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Text(
-                      //   '66%\n FOOTBALL',
-                      //   textAlign: TextAlign.center,
-                      //   style: TextStyle(
-                      //       color: appThemeteal,
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 14),
-                      // ),
-                      Container(
-                        height: 200,
-                        child: SfCircularChart(
-                            palette: [
-                              Color(0xff095199),
-                              Color(0xff0b65bf),
-                            ],
-                            borderWidth: double.minPositive,
-                            legend: Legend(
-                                isVisible: true,
-                                textStyle: TextStyle(color: Colors.grey)),
-                            series: <CircularSeries>[
-                              // Render pie chart
-                              DoughnutSeries<ChartData, String>(
-                                  dataSource: chartData1,
-                                  radius: '85',
-                                  xValueMapper: (ChartData data, _) => data.x,
-                                  yValueMapper: (ChartData data, _) => data.y),
-                            ]),
-                      ),
-                      // Text('33%\n TENNIS',
-                      //     textAlign: TextAlign.center,
-                      //     style: TextStyle(
-                      //         color: appThemelightPink,
-                      //         fontWeight: FontWeight.bold,
-                      //         fontSize: 14)),
-                    ],
+                  child: Container(
+                    child: SfCircularChart(
+                        palette: [
+                          Color(0xff095199),
+                          Color(0xff0b65bf),
+                        ],
+                        title: ChartTitle(
+                            text: 'Values are in Percentage %',
+                            textStyle:
+                                TextStyle(color: Colors.grey, fontSize: 12)),
+                        borderWidth: double.minPositive,
+                        legend: Legend(
+                            isVisible: true,
+                            overflowMode: LegendItemOverflowMode.wrap,
+                            position: LegendPosition.bottom),
+                        series: <CircularSeries>[
+                          // Render pie chart
+                          DoughnutSeries<ChartData, String>(
+                              dataSource: chartData1,
+                              radius: '85',
+                              xValueMapper: (ChartData data, _) => data.x,
+                              yValueMapper: (ChartData data, _) => data.y,
+                              dataLabelSettings: DataLabelSettings(
+                                  isVisible: true,
+                                  overflowMode: OverflowMode.shift,
+                                  labelPosition: ChartDataLabelPosition.outside,
+                                  labelAlignment:
+                                      ChartDataLabelAlignment.bottom,
+                                  textStyle: TextStyle(color: Colors.grey))),
+                        ]),
                   ),
                 ),
               ],
@@ -442,14 +436,20 @@ class _BlogViewState extends State<BlogView> {
                     ),
                   ),
                 ),
-                PublicPickWidget(isFollowing: true),
+                PublicPickWidgetBlog(
+                  isFollowing: true,
+                  isUser: widget.isUser,
+                  isLoggedIn: widget.isLoggedin,
+                ),
               ],
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-            child: PaidPickWidget(
+            child: PaidPickWidgetBlog(
               isFollowing: true,
+              isUser: widget.isUser,
+              isLoggedIn: widget.isLoggedin,
             ),
           ),
           Padding(
@@ -481,20 +481,37 @@ class _BlogViewState extends State<BlogView> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
-                  child: GradedPick(grade: 'Won'),
+                  child: GradedPickBlog(
+                    grade: 'Won',
+                    isUser: widget.isUser,
+                    isLoggedIn: widget.isLoggedin,
+                    isFollowing: false,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
-                  child: GradedPick(grade: 'Lost'),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: GradedPick(grade: 'Pushed'),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: PublicPickAnalysisWidget(
+                  child: GradedPickBlog(
+                    grade: 'Lost',
+                    isUser: widget.isUser,
+                    isLoggedIn: widget.isLoggedin,
                     isFollowing: true,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: GradedPickBlog(
+                    grade: 'Pushed',
+                    isUser: widget.isUser,
+                    isLoggedIn: widget.isLoggedin,
+                    isFollowing: false,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: PublicPickAnalysisWidgetBlog(
+                    isFollowing: true,
+                    isUser: widget.isUser,
+                    isLoggedIn: widget.isLoggedin,
                   ),
                 ),
               ],
@@ -542,19 +559,32 @@ class _BlogViewState extends State<BlogView> {
                           topRight: Radius.circular(5),
                           topLeft: Radius.circular(5)),
                       color: appThemeBlue),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'SERVICE DESCRIPTION',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14),
-                      )
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'SERVICE DESCRIPTION',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14),
+                        ),
+                        (widget.isUser)
+                            ? GestureDetector(
+                                onTap: () {
+                                  serviceDialog(context);
+                                },
+                                child: Icon(
+                                  Icons.edit,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : SizedBox()
+                      ],
+                    ),
                   ),
                 ),
                 Container(
@@ -576,6 +606,7 @@ class _BlogViewState extends State<BlogView> {
   }
 
   Future showPopup() async {
+    bool checkBoxValue = false;
     return showDialog(
         context: context,
         barrierDismissible: true,
@@ -586,14 +617,13 @@ class _BlogViewState extends State<BlogView> {
               child: AlertDialog(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 contentPadding: EdgeInsets.zero,
-                insetPadding: EdgeInsets.zero,
+                insetPadding: EdgeInsets.all(15),
 
                 // To display the title it is optional
                 content: Container(
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
                         height: 50,
@@ -616,20 +646,29 @@ class _BlogViewState extends State<BlogView> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('Current Balance:'),
                           Expanded(
-                              child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                                height: 40, child: Center(child: Text('15€'))),
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text('Current Balance:'))),
+                          Expanded(
+                              child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('15€'),
+                            ),
                           ))
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Deposit Amount(EUR):'),
+                          Expanded(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text('Deposit Amount(EUR):'))),
                           Expanded(
                               child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -655,20 +694,33 @@ class _BlogViewState extends State<BlogView> {
                         ],
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8),
-                            child: Text('Payment method:'),
+                          Expanded(
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Padding(
+                                padding: EdgeInsets.only(top: 16.0),
+                                child: Text(
+                                  'Payment method:',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                              ),
+                            ),
                           ),
                           Expanded(
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
                                     Radio(
                                         value: '1',
+                                        splashRadius: 0,
+                                        fillColor: MaterialStateProperty.all(
+                                            appThemeBlue),
                                         groupValue: '1',
                                         onChanged: (v) {}),
                                     Text(
@@ -682,10 +734,12 @@ class _BlogViewState extends State<BlogView> {
                                   children: [
                                     Radio(
                                         value: '1',
+                                        fillColor: MaterialStateProperty.all(
+                                            appThemeBlue),
                                         groupValue: '1',
                                         onChanged: (v) {}),
                                     Text(
-                                      'Paypal',
+                                      'PayPal',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -695,10 +749,12 @@ class _BlogViewState extends State<BlogView> {
                                   children: [
                                     Radio(
                                         value: '1',
+                                        fillColor: MaterialStateProperty.all(
+                                            appThemeBlue),
                                         groupValue: '1',
                                         onChanged: (v) {}),
                                     Text(
-                                      'Skirll',
+                                      'Skrill',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -706,26 +762,48 @@ class _BlogViewState extends State<BlogView> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Row(
                         children: [
                           Checkbox(
-                            value: false,
-                            onChanged: (v) {},
+                            value: checkBoxValue,
+                            fillColor: MaterialStateProperty.all(appThemeBlue),
+                            onChanged: (v) {
+                              setState(() {
+                                checkBoxValue = v!;
+                              });
+                            },
                           ),
                           Expanded(
                             child: Text(
-                                "i knowladge that i read and agree with the Wallwet Rulles"),
+                                "I aknowledge that i read and agree with the Wallwet Rulles"),
                           )
                         ],
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text('Deposit'),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: Container(
+                          width: 100,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: appThemeBlue),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  'Deposit',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       )
                     ],
                   ),

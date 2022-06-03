@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tipster/View/home_screen.dart';
 import 'package:tipster/View/my_coupon_saved_screen.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/commonBtn.dart';
@@ -222,35 +221,41 @@ class _MyCouponScreenState extends State<MyCouponScreen> {
                           color: Colors.white,
                           height: 25,
                           width: 50,
-                          child: DropdownButton(
-                            enableFeedback: false,
-                            alignment: AlignmentDirectional.topStart,
-                            underline: Container(),
-                            dropdownColor: Colors.white,
-                            isDense: true,
-                            focusColor: Colors.white,
-                            icon: Icon(
-                              Icons.keyboard_arrow_down,
-                              size: 20,
-                            ),
-                            items: dataValues.map((String e) {
-                              return DropdownMenuItem(
-                                value: e,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    e,
-                                    style: TextStyle(color: Colors.black),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton(
+                              enableFeedback: false,
+                              alignment: AlignmentDirectional.topStart,
+                              underline: Container(),
+                              dropdownColor: Colors.white,
+                              isDense: true,
+                              isExpanded: true,
+                              focusColor: Colors.white,
+                              icon: Icon(
+                                Icons.keyboard_arrow_down,
+                                size: 20,
+                              ),
+                              items: dataValues.map((String e) {
+                                return DropdownMenuItem(
+                                  value: e,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Container(
+                                      width: 20,
+                                      child: Text(
+                                        e,
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              );
-                            }).toList(),
-                            onChanged: (String? v) {
-                              setState(() {
-                                dropDownValue = v!;
-                              });
-                            },
-                            value: dropDownValue,
+                                );
+                              }).toList(),
+                              onChanged: (String? v) {
+                                setState(() {
+                                  dropDownValue = v!;
+                                });
+                              },
+                              value: dropDownValue,
+                            ),
                           ),
                         )
 

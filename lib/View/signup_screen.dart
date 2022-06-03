@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:marquee/marquee.dart';
 import 'package:tipster/View/login_screen.dart';
 import 'package:tipster/constants/widgets/commonBtn.dart';
 import 'package:tipster/constants/widgets/signUpAppBar.dart';
@@ -18,6 +18,16 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool termsandcond = false;
+  RegExp pass_valid = RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)");
+  //A function that validate user entered password
+  bool validatePassword(String pass) {
+    String _password = pass.trim();
+    if (pass_valid.hasMatch(_password)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -309,8 +319,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                               Container(
                                 height: 30,
-                                child: TextField(
+                                child: TextFormField(
                                   maxLines: 1,
+                                  // validator: (value) {
+                                  //   if (value!.isEmpty) {
+                                  //     return "Please enter password";
+                                  //   } else {
+                                  //     //call function to check password
+                                  //     bool result = validatePassword(value);
+                                  //     if (result) {
+                                  //       // create account event
+                                  //       return null;
+                                  //     } else {
+                                  //       return " Password should contain Capital, small letter & Number & Special";
+                                  //     }
+                                  //   }
+                                  // },
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(
+                                        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')),
+                                  ],
                                   decoration: InputDecoration(
                                     fillColor: Colors.white,
                                     isDense: true,
@@ -372,21 +400,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Checkbox(
-                        value: termsandcond,
-                        onChanged: (v) {
-                          setState(() {
-                            termsandcond = v!;
-                          });
-                        }),
-                    Expanded(
-                        child: Text(
-                      'I agree with the Terms&Conditions and Privacy Policy  ',
-                      style: TextStyle(fontSize: 12),
-                    ))
-                  ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                  child: Row(
+                    children: [
+                      Checkbox(
+                          value: termsandcond,
+                          fillColor: MaterialStateProperty.all(appThemeBlue),
+                          onChanged: (v) {
+                            setState(() {
+                              termsandcond = v!;
+                            });
+                          }),
+                      Expanded(
+                          child: Text(
+                        'I agree with the Terms&Conditions and Privacy Policy  ',
+                        style: TextStyle(fontSize: 12),
+                      ))
+                    ],
+                  ),
                 ),
                 GestureDetector(
                     onTap: () {},

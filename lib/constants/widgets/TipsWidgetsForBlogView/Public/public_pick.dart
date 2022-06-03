@@ -1,14 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tipster/constants/widgets/commonWidgets.dart';
+import 'package:tipster/View/BUYER%20ADMIN/buyer_admin_susbscription.dart';
+import 'package:tipster/View/login_screen.dart';
+import 'package:tipster/View/my_coupon_screen.dart';
 import 'package:tipster/utils/colors.dart';
 
-class PublicPickWidget extends StatelessWidget {
+class PublicPickWidgetBlog extends StatelessWidget {
   final bool isFollowing;
+  final bool isUser;
+  final bool isLoggedIn;
 
-  const PublicPickWidget({
+  const PublicPickWidgetBlog({
     Key? key,
     required this.isFollowing,
+    required this.isUser,
+    required this.isLoggedIn,
   }) : super(key: key);
 
   @override
@@ -28,14 +34,6 @@ class PublicPickWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage:
-                          AssetImage('assets/images/profile_picture.png'),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Column(
@@ -58,15 +56,6 @@ class PublicPickWidget extends StatelessWidget {
                           SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            children: [
-                              commonFlag(),
-                              SizedBox(
-                                width: 3,
-                              ),
-                              Text('+14% (253)'),
-                            ],
-                          ),
                         ],
                       ),
                     ),
@@ -78,14 +67,32 @@ class PublicPickWidget extends StatelessWidget {
                     Container(
                       width: 100,
                       height: 25,
-                      child: (isFollowing)
-                          ? Center(child: Text('FOLLOWING'))
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(Icons.person_add_alt),
-                                Text('FOLLOW')
-                              ],
+                      child: (isLoggedIn)
+                          ? (isFollowing)
+                              ? Center(child: Text('FOLLOWING'))
+                              : Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(Icons.person_add_alt),
+                                    Text('FOLLOW')
+                                  ],
+                                )
+                          : GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginScreen()));
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(Icons.person_add_alt),
+                                  Text('FOLLOW')
+                                ],
+                              ),
                             ),
                       decoration: BoxDecoration(
                           border: Border.all(color: appThemeBlue),
@@ -94,25 +101,42 @@ class PublicPickWidget extends StatelessWidget {
                     SizedBox(
                       height: 11,
                     ),
-                    Container(
-                      width: 100,
-                      height: 25,
-                      decoration: BoxDecoration(
-                          color: appThemeBlue,
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.shopping_cart,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text(
-                            '55\€/MONTH',
-                            style: TextStyle(fontSize: 12, color: Colors.white),
-                          )
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        if (isLoggedIn) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      BuyerAdminSubscriptions()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        }
+                      },
+                      child: Container(
+                        width: 100,
+                        height: 25,
+                        decoration: BoxDecoration(
+                            color: appThemeBlue,
+                            borderRadius: BorderRadius.circular(4)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.shopping_cart,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            Text(
+                              '55\€/MONTH',
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -341,14 +365,26 @@ class PublicPickWidget extends StatelessWidget {
   }
 }
 
-class PublicPickAnalysisWidget extends StatelessWidget {
+class PublicPickAnalysisWidgetBlog extends StatefulWidget {
   final bool isFollowing;
+  final bool isUser;
+  final bool isLoggedIn;
 
-  const PublicPickAnalysisWidget({
+  const PublicPickAnalysisWidgetBlog({
     Key? key,
     required this.isFollowing,
+    required this.isUser,
+    required this.isLoggedIn,
   }) : super(key: key);
 
+  @override
+  State<PublicPickAnalysisWidgetBlog> createState() =>
+      _PublicPickAnalysisWidgetBlogState();
+}
+
+class _PublicPickAnalysisWidgetBlogState
+    extends State<PublicPickAnalysisWidgetBlog> {
+  bool showMore = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -366,14 +402,6 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage:
-                          AssetImage('assets/images/profile_picture.png'),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Column(
@@ -396,15 +424,6 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                           SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            children: [
-                              commonFlag(),
-                              SizedBox(
-                                width: 3,
-                              ),
-                              Text('+14% (253)'),
-                            ],
-                          ),
                         ],
                       ),
                     ),
@@ -416,14 +435,32 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                     Container(
                       width: 100,
                       height: 25,
-                      child: (isFollowing)
-                          ? Center(child: Text('FOLLOWING'))
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(Icons.person_add_alt),
-                                Text('FOLLOW')
-                              ],
+                      child: (widget.isLoggedIn)
+                          ? (widget.isFollowing)
+                              ? Center(child: Text('FOLLOWING'))
+                              : Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(Icons.person_add_alt),
+                                    Text('FOLLOW')
+                                  ],
+                                )
+                          : GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginScreen()));
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(Icons.person_add_alt),
+                                  Text('FOLLOW')
+                                ],
+                              ),
                             ),
                       decoration: BoxDecoration(
                           border: Border.all(color: appThemeBlue),
@@ -432,25 +469,42 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                     SizedBox(
                       height: 11,
                     ),
-                    Container(
-                      width: 100,
-                      height: 25,
-                      decoration: BoxDecoration(
-                          color: appThemeBlue,
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.shopping_cart,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text(
-                            '55\€/MONTH',
-                            style: TextStyle(fontSize: 12, color: Colors.white),
-                          )
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        if (widget.isLoggedIn) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      BuyerAdminSubscriptions()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        }
+                      },
+                      child: Container(
+                        width: 100,
+                        height: 25,
+                        decoration: BoxDecoration(
+                            color: appThemeBlue,
+                            borderRadius: BorderRadius.circular(4)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.shopping_cart,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            Text(
+                              '55\€/MONTH',
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -477,10 +531,20 @@ class PublicPickAnalysisWidget extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
-                      Icons.edit,
-                      color: Colors.black,
-                    ),
+                    (widget.isUser)
+                        ? GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyCouponScreen()));
+                            },
+                            child: Icon(
+                              Icons.edit,
+                              color: Colors.black,
+                            ),
+                          )
+                        : SizedBox(),
                     Expanded(
                       child: Center(
                         child: Text(
@@ -561,6 +625,98 @@ class PublicPickAnalysisWidget extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.04),
+            child: Divider(
+              height: 0,
+            ),
+          ),
+          (showMore)
+              ? Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.04,
+                      vertical: 8),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            text:
+                                'Lorem ipsum dolor sit amet askaslalsnf nsknlan kasndlan ca ksajfnlcna jandflsc kasjfnla c,ajfnlasn caxljflsanclmax ckanrslkfcnalc alnfdklsanfclsax ,ax flksnfclkasn,z'
+                                'anskldlasjdflkasmnc, axcaslkfncaslclsa clas csalksnflksan cla clanclsanlfaslf'
+                                'asdfnklanflsanmcfax c,.ax lasmndflkasnmflkmsc.aamsfklcsamfclxalamlsfc'
+                                'asmdklmflsamdlasmlc axasdfmklasmcflnflkdnfladnc l'
+                                'slafmlamlsmfc askjdlsakjdlkasjdlajl ajkldjsldjasl akajsldjsal'
+                                'adsalkdjsaldjla',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        (widget.isUser)
+                            ? Container(
+                                height: 30,
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MyCouponScreen()));
+                                  },
+                                  child: Text(
+                                    'Update analysis',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                  style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              appThemelightPink)),
+                                ),
+                              )
+                            : SizedBox()
+                      ]),
+                )
+              : Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.04,
+                      vertical: 8),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showMore = true;
+                      });
+                    },
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                          text:
+                              'Lorem ipsum dolor sit amet askaslalsnf nsknlan kasndlan ca ksajfnlcna jandflsc kasjfnla c,ajfnlasn caxljflsanclmax ckanrslkfcnalc alnfdklsanfclsax ,ax flksnfclkasn,z'
+                              'anskldlasjdflkasmnc, axcaslkfncaslclsa clas csalksnflksan cla clanclsanlfaslf'
+                              'asdfnklanflsanmcfax c,.ax lasmndflkasnmflkmsc.aamsfklcsamfclxalamlsfc'
+                              'asmdklmflsamdlasmlc axasdfmklasmcflnflkdnfladnc l'
+                              'slafmlamlsmfc...',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: ' Show more',
+                              style: TextStyle(
+                                  color: appThemelightPink,
+                                  fontWeight: FontWeight.normal,
+                                  decoration: TextDecoration.underline),
+                            )
+                          ]),
+                    ),
+                  ),
+                ),
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.04),

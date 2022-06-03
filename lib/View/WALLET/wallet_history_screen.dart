@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tipster/View/WALLET/wallet_deposit_screen.dart';
 import 'package:tipster/constants/widgets/commonAppBar.dart';
 import 'package:tipster/constants/widgets/common_bottom_widget.dart';
 import 'package:tipster/constants/widgets/wallet_popup_widget.dart';
@@ -299,21 +298,74 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                                     height: 10,
                                   ),
                                   Container(
+                                    height: 40,
+                                    padding: EdgeInsets.only(left: 10),
                                     decoration: BoxDecoration(
+                                        color: Colors.white,
                                         border: Border.all(
                                           color: Colors.grey.withOpacity(0.5),
                                         ),
                                         borderRadius: BorderRadius.circular(5)),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          Expanded(child: Text('')),
-                                          Icon(Icons.keyboard_arrow_down)
+                                    width: double.infinity,
+                                    child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                        onChanged: (newValue) {},
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+
+                                        dropdownColor: Colors.white,
+
+                                        isExpanded: true,
+
+                                        // Initial Value
+                                        hint: Text(
+                                          '',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        // Down Arrow Icon
+                                        icon: Icon(Icons.keyboard_arrow_down),
+
+                                        // Array list of items
+                                        items: [
+                                          DropdownMenuItem(
+                                            value: '1',
+                                            child: Text(
+                                              'Completed',
+                                              style: TextStyle(),
+                                            ),
+                                          ),
+                                          DropdownMenuItem(
+                                            value: '2',
+                                            child: Text(
+                                              'Pending',
+                                              style: TextStyle(),
+                                            ),
+                                          ),
+                                          DropdownMenuItem(
+                                            value: '3',
+                                            child: Text(
+                                              'Cancelled',
+                                              style: TextStyle(),
+                                            ),
+                                          ),
+                                          DropdownMenuItem(
+                                            value: '4',
+                                            child: Text(
+                                              'Refunded',
+                                              style: TextStyle(),
+                                            ),
+                                          ),
                                         ],
+                                        // After selecting the desired option,it will
+                                        // change button value to selected value
+
+                                        value: '1',
                                       ),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -391,67 +443,33 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                         Text('WID:6c9413a3ee046418b70059b1b34c7038'),
                         Text('Skrill Transaction ID: 444555666'),
                         Container(
-                          height: 40,
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           width: double.infinity,
-                          child: DropdownButton<String>(
-                            onChanged: (newValue) {},
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-
-                            dropdownColor: Colors.white,
-
-                            isExpanded: true,
-
-                            // Initial Value
-                            hint: Text(
-                              '',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            // Down Arrow Icon
-                            icon: Icon(Icons.keyboard_arrow_down),
-
-                            // Array list of items
-                            items: [
-                              DropdownMenuItem(
-                                value: '1',
-                                child: Text(
+                          child: ExpansionTile(
+                            collapsedIconColor: Colors.black,
+                            tilePadding: EdgeInsets.only(left: 0),
+                            childrenPadding: EdgeInsets.all(0),
+                            title: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
                                   'Completed',
-                                  style: TextStyle(color: appThemeteal),
+                                  style: TextStyle(
+                                      color: appThemeteal,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
-                              ),
-                              DropdownMenuItem(
-                                value: '2',
-                                child: Text(
-                                  'Pending',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: '3',
-                                child: Text(
-                                  'Cancelled',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: '4',
-                                child: Text(
-                                  'Refunded',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                            ],
-                            // After selecting the desired option,it will
-                            // change button value to selected value
-
-                            value: '1',
+                              ],
+                            ),
+                            children: [Text('Details of Transaction')],
                           ),
+                        ),
+                        Divider(
+                          color: Colors.grey,
+                          height: 0,
                         ),
                         SizedBox(
                           height: 10,
@@ -473,67 +491,33 @@ class _WalletHistoryScreenState extends State<WalletHistoryScreen> {
                         ),
                         Text('WID:6c9413a3ee046418b70059b1b34c7038'),
                         Container(
-                          height: 40,
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           width: double.infinity,
-                          child: DropdownButton<String>(
-                            onChanged: (newValue) {},
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-
-                            dropdownColor: Colors.white,
-
-                            isExpanded: true,
-
-                            // Initial Value
-                            hint: Text(
-                              '',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            // Down Arrow Icon
-                            icon: Icon(Icons.keyboard_arrow_down),
-
-                            // Array list of items
-                            items: [
-                              DropdownMenuItem(
-                                value: '1',
-                                child: Text(
+                          child: ExpansionTile(
+                            collapsedIconColor: Colors.black,
+                            tilePadding: EdgeInsets.only(left: 0),
+                            childrenPadding: EdgeInsets.all(0),
+                            title: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
                                   'Completed',
-                                  style: TextStyle(color: appThemeteal),
+                                  style: TextStyle(
+                                      color: appThemeteal,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
-                              ),
-                              DropdownMenuItem(
-                                value: '2',
-                                child: Text(
-                                  'Pending',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: '3',
-                                child: Text(
-                                  'Cancelled',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: '4',
-                                child: Text(
-                                  'Refunded',
-                                  style: TextStyle(color: appThemeteal),
-                                ),
-                              ),
-                            ],
-                            // After selecting the desired option,it will
-                            // change button value to selected value
-
-                            value: '1',
+                              ],
+                            ),
+                            children: [Text('Details of Transaction')],
                           ),
+                        ),
+                        Divider(
+                          color: Colors.grey,
+                          height: 0,
                         ),
                         SizedBox(
                           height: 10,
